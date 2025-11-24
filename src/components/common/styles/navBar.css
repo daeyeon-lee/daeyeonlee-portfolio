@@ -31,28 +31,42 @@
 	justify-content: space-between;
 	list-style: none;
 	align-items: center;
-	margin-left: -16px;
-	margin-right: 20px;
-	margin-top: 11px;
+	margin: 0;
+	padding: 0 20px;
+	height: 100%;
 }
 
 .nav-item {
-	font-weight: bold;
-	font-size: 80%;
+	font-weight: 500;
+	font-size: 0.9rem;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.nav-bullet {
+	color: var(--secondary-color);
+	font-size: 1rem;
 }
 
 .nav-item.active a {
-	color: var(--link-color) !important;
+	color: var(--primary-color) !important;
+	font-weight: 600;
+}
+
+.nav-item.active .nav-bullet {
+	color: var(--primary-color);
 }
 
 .nav-item a {
 	text-decoration: none;
-	color: var(--primary-color);
+	color: var(--secondary-color);
+	transition: color 0.2s ease-in-out;
 }
 
 .nav-item a:hover {
-	color: var(--link-color);
-	transition: color 0.3s ease-in-out;
+	color: var(--primary-color);
+	transition: color 0.2s ease-in-out;
 }
 
 @media (max-width: 600px) {

@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faMailBulk, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faTwitter,
-	faGithub,
-	faStackOverflow,
-	faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
@@ -71,7 +66,11 @@ const Homepage = () => {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{INFO.main.title}</title>
+				<title>
+					{INFO.main.title}
+					{INFO.main.jobTitle}
+				</title>
+				<meta name="author" content={INFO.main.jobTitle} />
 				<meta name="description" content={currentSEO.description} />
 				<meta
 					name="keywords"
@@ -114,82 +113,170 @@ const Homepage = () => {
 						</div>
 
 						<div className="homepage-socials">
-							<a
-								href={INFO.socials.twitter}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faTwitter}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.stackoverflow}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faStackOverflow}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.instagram}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faInstagram}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faMailBulk}
-									className="homepage-social-icon"
-								/>
-							</a>
+							{INFO.socials.github && (
+								<a
+									href={INFO.socials.github}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faGithub}
+										className="homepage-social-icon"
+									/>
+								</a>
+							)}
+							{INFO.socials.blog && (
+								<a
+									href={INFO.socials.blog}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faLink}
+										className="homepage-social-icon"
+									/>
+								</a>
+							)}
+							{INFO.main.email && (
+								<a
+									href={`mailto:${INFO.main.email}`}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faMailBulk}
+										className="homepage-social-icon"
+									/>
+								</a>
+							)}
 						</div>
-
-						<div className="homepage-projects">
-							<AllProjects />
-						</div>
-
-						<div className="homepage-after-title">
-							<div className="homepage-articles">
-								{myArticles.map((article, index) => (
+						{/* 기술 스택 */}
+						<div className="homepage-stacks">
+							<div className="homepage-section-title">Stacks</div>
+							<div className="homepage-stacks-list">
+								{INFO.stacks.map((category, index) => (
 									<div
-										className="homepage-article"
-										key={(index + 1).toString()}
+										key={index}
+										className="homepage-stack-item"
 									>
-										<Article
-											key={(index + 1).toString()}
-											date={article().date}
-											title={article().title}
-											description={article().description}
-											link={"/article/" + (index + 1)}
-										/>
+										<div className="homepage-stack-category-title">
+											{category.name}
+										</div>
+										<ul className="homepage-stack-list">
+											{category.items.map(
+												(stack, stackIndex) => (
+													<li key={stackIndex}>
+														•{stack}
+													</li>
+												)
+											)}
+										</ul>
 									</div>
 								))}
 							</div>
+						</div>
 
-							<div className="homepage-works">
-								<Works />
+						{/* 스킬 */}
+						<div className="homepage-skills">
+							<div className="homepage-section-title">Skills</div>
+							<div className="homepage-skills-content">
+								{INFO.skills.backend && (
+									<div className="homepage-skill-category">
+										<div className="homepage-skill-category-title">
+											Backend Engineering
+										</div>
+										<ul className="homepage-skill-list">
+											{INFO.skills.backend.map(
+												(skill, index) => (
+													<li key={index}>
+														• {skill}
+													</li>
+												)
+											)}
+										</ul>
+									</div>
+								)}
+								{INFO.skills.software && (
+									<div className="homepage-skill-category">
+										<div className="homepage-skill-category-title">
+											Software Development
+										</div>
+										<ul className="homepage-skill-list">
+											{INFO.skills.software.map(
+												(skill, index) => (
+													<li key={index}>
+														•{skill}
+													</li>
+												)
+											)}
+										</ul>
+									</div>
+								)}
+								{INFO.skills.frontend && (
+									<div className="homepage-skill-category">
+										<div className="homepage-skill-category-title">
+											Frontend Engineering
+										</div>
+										<ul className="homepage-skill-list">
+											{INFO.skills.frontend.map(
+												(skill, index) => (
+													<li key={index}>
+														•{skill}
+													</li>
+												)
+											)}
+										</ul>
+									</div>
+								)}
+							</div>
+						</div>
+
+						{/* 경험 */}
+						<div className="homepage-activities">
+							<div className="homepage-section-title">
+								Activities
+							</div>
+							<div className="homepage-activities-content">
+								{INFO.activities.map((activity, index) => (
+									<div
+										key={index}
+										className="homepage-activity-item"
+									>
+										<div className="homepage-activity-period">
+											{activity.period}
+										</div>
+										<div className="homepage-activity-details">
+											<div className="homepage-activity-title">
+												{activity.title}
+											</div>
+											{activity.subtitle && (
+												<div className="homepage-activity-subtitle">
+													{activity.subtitle}
+												</div>
+											)}
+											{activity.description &&
+												activity.description.length >
+													0 && (
+													<ul className="homepage-activity-description">
+														{activity.description.map(
+															(
+																desc,
+																descIndex
+															) => (
+																<li
+																	key={
+																		descIndex
+																	}
+																>
+																	•{desc}
+																</li>
+															)
+														)}
+													</ul>
+												)}
+										</div>
+									</div>
+								))}
 							</div>
 						</div>
 
