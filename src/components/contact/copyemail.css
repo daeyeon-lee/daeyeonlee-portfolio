@@ -1,0 +1,25 @@
+.btn-copy-email {
+	background-color: transparent;
+	border: none;
+	cursor: pointer; /* 마우스 오버시 커서 변경 */
+	padding: 0; /* 패딩 제거 */
+	margin: 0; /* 마진 제거 */
+	font-family: inherit; /* 폰트 상속 */
+	font-size: inherit; /* 폰트 크기 상속 */
+	display: flex;
+	color: #65656d;
+}
+
+.copy-btn-text {
+	font-size: 14px;
+	font-weight: 600;
+	padding-left: 15px;
+}
+
+.copy-email-wrapper {
+	display: flex;
+}
+
+:root {
+	--toastify-color-progress-light: #ffbf19;
+}

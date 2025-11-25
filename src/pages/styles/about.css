@@ -52,7 +52,6 @@
 	overflow: hidden;
 	width: 100%;
 	border-radius: 10%;
-	transform: rotate(3deg);
 }
 
 .about-image-wrapper img {
@@ -106,7 +105,10 @@
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+	.about-subtitle {
+		width: 100% !important;
+	}
 	.about-container {
 		padding-top: 60px;
 	}

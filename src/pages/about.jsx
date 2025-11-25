@@ -5,11 +5,13 @@ import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 import Socials from "../components/about/socials";
+import Summary from "../components/about/summary";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/about.css";
+import Stack from "../components/stack/stack";
 
 const About = () => {
 	useEffect(() => {
@@ -22,7 +24,11 @@ const About = () => {
 		<React.Fragment>
 			<Helmet>
 				<title>{`About | ${INFO.main.title}`}</title>
-				<meta name="robots" content="noindex, nofollow" />
+				<meta name="description" content={currentSEO.description} />
+				<meta
+					name="keywords"
+					content={currentSEO.keywords.join(", ")}
+				/>
 			</Helmet>
 
 			<div className="page-content">
@@ -42,7 +48,17 @@ const About = () => {
 								</div>
 
 								<div className="subtitle about-subtitle">
-									{INFO.about.description}
+									{INFO.about.description.map(
+										(desc, index) => (
+											<div>{desc}</div>
+										)
+									)}
+								</div>
+								<div>
+									<Stack stacks={INFO.stacks} />
+								</div>
+								<div>
+									<Summary frontend={INFO.about.frontend} />
 								</div>
 							</div>
 
@@ -50,8 +66,8 @@ const About = () => {
 								<div className="about-image-container">
 									<div className="about-image-wrapper">
 										<img
-											src="about.jpg"
-											alt="about"
+											src="/logo.png"
+											alt="profile"
 											className="about-image"
 										/>
 									</div>

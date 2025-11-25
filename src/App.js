@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import ReactGA from "react-ga4";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Homepage from "./pages/homepage";
 import About from "./pages/about";
@@ -33,6 +35,18 @@ function App() {
 				<Route path="/contact" element={<Contact />} />
 				<Route path="*" element={<Notfound />} />
 			</Routes>
+			<ToastContainer
+				position="top-center"
+				autoClose={1000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="light"
+			/>
 		</div>
 	);
 }
