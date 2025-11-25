@@ -8,11 +8,7 @@
 	/* ---------------------- */
 
 	/* ------- fonts ------- */
-	--primary-font: "Pretendard Variable", Pretendard, -apple-system,
-		BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-		"Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
-	--secondary-font: "Pretendard Variable", Pretendard, -apple-system,
-		BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-		"Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+	--primary-font: "Pretendard";
+	--secondary-font: "Roboto", sans-serif;
 	/* --------------------- */
 }

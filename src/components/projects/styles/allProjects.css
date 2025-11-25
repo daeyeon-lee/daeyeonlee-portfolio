@@ -1,19 +1,23 @@
 .all-projects-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
 	padding-top: 30px;
 	padding-bottom: 30px;
+	margin-left: -35px;
+	margin-right: -35px;
 }
 
 .all-projects-project {
-	width: 100%;
+	width: calc(100% / 3);
 	box-sizing: border-box;
+	padding: 10px;
 	overflow: hidden;
 }
 
-@media (max-width: 768px) {
-	.all-projects-container {
-		grid-template-columns: 1fr;
+@media (max-width: 600px) {
+	.all-projects-project {
+		width: 90%;
+		margin: 0 auto;
 	}
 }

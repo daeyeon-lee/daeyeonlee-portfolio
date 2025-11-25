@@ -7,6 +7,7 @@ import About from "./pages/about";
 import Projects from "./pages/projects";
 import Articles from "./pages/articles";
 import ReadArticle from "./pages/readArticle";
+import ReadProject from "./pages/readProject";
 import Contact from "./pages/contact";
 import Notfound from "./pages/404";
 
@@ -26,6 +27,7 @@ function App() {
 				<Route path="/" element={<Homepage />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/projects" element={<Projects />} />
+				<Route path="/project/:id" element={<ReadProject />} />
 				<Route path="/articles" element={<Articles />} />
 				<Route path="/article/:slug" element={<ReadArticle />} />
 				<Route path="/contact" element={<Contact />} />
