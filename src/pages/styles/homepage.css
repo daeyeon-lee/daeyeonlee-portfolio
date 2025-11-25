@@ -13,7 +13,7 @@
 	margin: 0 auto;
 }
 
-.homepage-first-area {
+.intro-area {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -21,106 +21,101 @@
 	margin-bottom: 40px;
 }
 
-.homepage-first-area-left-side {
+.intro-content {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	flex: 1;
 }
 
-.homepage-name {
+.intro-title {
 	font-size: 2.5rem;
 	font-weight: 600;
 	color: var(--primary-color);
 	margin-bottom: 10px;
 }
 
-.homepage-job-title {
-	font-size: 1.2rem;
+.intro-job-title {
+	font-size: 1.5rem;
+	font-weight: 600;
 	color: var(--secondary-color);
-	margin-bottom: 30px;
 }
 
-.homepage-description {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.homepage-description-item {
+.intro-subtitle {
 	color: var(--secondary-color);
 	line-height: 1.6;
+	margin-bottom: 10px;
 }
 
-.homepage-first-area-right-side {
+.intro-image-wrapper {
 	display: flex;
 	align-items: center;
 }
 
-.homepage-image-container {
+.intro-image-container {
 	width: 300px;
 	height: 300px;
 	flex-shrink: 0;
 }
 
-.homepage-image-wrapper {
+.intro-image {
 	overflow: hidden;
 	border-radius: 10px;
 	width: 100%;
 	height: 100%;
 }
 
-.homepage-image-wrapper img {
+.intro-img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.homepage-socials {
+.social-links {
 	display: flex;
 	justify-content: left;
 	align-items: center;
 	gap: 20px;
-	padding: 30px 0;
+	padding: 10px 0;
 	border-bottom: 1px solid #e5e5e5;
 	margin-bottom: 40px;
 }
 
-.homepage-social-icon {
-	font-size: 24px;
+.social-icon {
+	font-size: 36px;
 	transition: color 0.2s ease-in-out;
 	color: var(--secondary-color);
 }
 
-.homepage-social-icon:hover {
+.social-icon:hover {
 	color: var(--primary-color);
 }
 
-.homepage-section-title {
+.section-title {
 	font-size: 1.5rem;
 	font-weight: 600;
 	color: var(--primary-color);
 	margin-bottom: 30px;
 }
 
-.homepage-stacks {
+.stacks-section {
 	margin-bottom: 60px;
 }
 
-.homepage-stacks-list {
+.stacks-list {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 }
 
-.homepage-stack-item {
+.stack-item {
 	display: grid;
 	grid-template-columns: 150px 1fr;
 	gap: 30px;
 	align-items: flex-start;
 }
 
-.homepage-stack-category-title {
+.stack-category-title {
 	font-size: 1.1rem;
 	font-weight: 600;
 	color: var(--primary-color);
@@ -131,101 +126,97 @@
 	margin-bottom: 20px;
 }
 
-.homepage-stack-list {
+.stack-list {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
-.homepage-stack-list li {
+.stack-list li {
 	color: var(--secondary-color);
 	margin-bottom: 8px;
 	line-height: 1.5;
 }
 
-.homepage-skills {
+.skills-section {
 	margin-bottom: 60px;
 }
 
-.homepage-skills-content {
+.skills-content {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
 }
 
-.homepage-skill-category {
+.skill-category {
 	margin-bottom: 20px;
 }
 
-.homepage-skill-category-title {
+.skill-category-title {
 	font-size: 1.1rem;
 	font-weight: 600;
 	color: var(--primary-color);
 	margin-bottom: 15px;
 }
 
-.homepage-skill-list {
+.skill-list {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
-.homepage-skill-list li {
+.skill-list li {
 	color: var(--secondary-color);
 	margin-bottom: 10px;
 	line-height: 1.6;
 }
 
-.homepage-projects {
+.activities-section {
 	margin-bottom: 60px;
 }
 
-.homepage-activities {
-	margin-bottom: 60px;
-}
-
-.homepage-activities-content {
+.activities-content {
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
 }
 
-.homepage-activity-item {
+.activity-item {
 	display: flex;
 	gap: 30px;
 }
 
-.homepage-activity-period {
+.activity-period {
 	font-size: 0.9rem;
 	color: var(--secondary-color);
 	min-width: 150px;
 	flex-shrink: 0;
 }
 
-.homepage-activity-details {
+.activity-details {
 	flex: 1;
 }
 
-.homepage-activity-title {
+.activity-title {
 	font-size: 1.1rem;
 	font-weight: 600;
 	color: var(--primary-color);
 	margin-bottom: 5px;
 }
 
-.homepage-activity-subtitle {
+.activity-subtitle {
 	font-size: 0.95rem;
 	color: var(--secondary-color);
 	margin-bottom: 10px;
 }
 
-.homepage-activity-description {
+.activity-description {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
-.homepage-activity-description li {
+.activity-description li {
 	color: var(--secondary-color);
 	margin-bottom: 8px;
 	line-height: 1.6;
@@ -236,40 +227,40 @@
 		padding: 0 20px;
 	}
 
-	.homepage-first-area {
+	.intro-area {
 		flex-direction: column;
 		gap: 30px;
 	}
 
-	.homepage-first-area-left-side {
+	.intro-content {
 		width: 100%;
 	}
 
-	.homepage-name {
+	.intro-title {
 		font-size: 2rem;
 	}
 
-	.homepage-first-area-right-side {
+	.intro-image-wrapper {
 		width: 100%;
 		justify-content: center;
 	}
 
-	.homepage-image-container {
+	.intro-image-container {
 		width: 250px;
 		height: 250px;
 	}
 
-	.homepage-stack-item {
+	.stack-item {
 		grid-template-columns: 1fr;
 		gap: 15px;
 	}
 
-	.homepage-activity-item {
+	.activity-item {
 		flex-direction: column;
 		gap: 10px;
 	}
 
-	.homepage-activity-period {
+	.activity-period {
 		min-width: auto;
 	}
 }

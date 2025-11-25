@@ -23,11 +23,7 @@ const Articles = () => {
 		<React.Fragment>
 			<Helmet>
 				<title>{`Articles | ${INFO.main.title}`}</title>
-				<meta name="description" content={currentSEO.description} />
-				<meta
-					name="keywords"
-					content={currentSEO.keywords.join(", ")}
-				/>
+				<meta name="robots" content="noindex, nofollow" />
 			</Helmet>
 
 			<div className="page-content">

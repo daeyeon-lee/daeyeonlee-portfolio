@@ -1,4 +1,4 @@
-const INFO = {
+const HomepageInfo = {
 	main: {
 		title: "Daeyeon Lee - Portfolio",
 		name: "Daeyeon Lee",
@@ -13,7 +13,7 @@ const INFO = {
 		blog: "https://velog.io/@dylee98/",
 	},
 
-	homepage: {
+	profiles: {
 		title: "이대연",
 		jobTitle: "Frontend Developer",
 		description: [
@@ -144,4 +144,4 @@ const INFO = {
 	],
 };
 
-export default INFO;
+export default HomepageInfo;

@@ -22,11 +22,7 @@ const Contact = () => {
 		<React.Fragment>
 			<Helmet>
 				<title>{`Contact | ${INFO.main.title}`}</title>
-				<meta name="description" content={currentSEO.description} />
-				<meta
-					name="keywords"
-					content={currentSEO.keywords.join(", ")}
-				/>
+				<meta name="robots" content="noindex, nofollow" />
 			</Helmet>
 
 			<div className="page-content">

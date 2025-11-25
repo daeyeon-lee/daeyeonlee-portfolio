@@ -8,13 +8,13 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Article from "../components/homepage/article";
-import Works from "../components/homepage/works";
-import AllProjects from "../components/projects/allProjects";
+// import Article from "../components/homepage/article";
+// import Works from "../components/homepage/works";
+// import AllProjects from "../components/projects/allProjects";
 
-import INFO from "../data/user";
+import HomepageInfo from "../data/user";
 import SEO from "../data/seo";
-import myArticles from "../data/articles";
+// import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
 
@@ -65,19 +65,14 @@ const Homepage = () => {
 
 	return (
 		<React.Fragment>
-			<Helmet>
+			{/* SEO */}
+			{/* <Helmet>
 				<title>
-					{INFO.main.title}
-					{INFO.main.jobTitle}
+					{HomepageInfo.main.title} - {HomepageInfo.main.jobTitle}
 				</title>
-				<meta name="author" content={INFO.main.jobTitle} />
-				<meta name="description" content={currentSEO.description} />
-				<meta
-					name="keywords"
-					content={currentSEO.keywords.join(", ")}
-				/>
-			</Helmet>
-
+				<meta name="robots" content="noindex, nofollow" />
+			</Helmet> */}
+			{/* 로고 */}
 			<div className="page-content">
 				<NavBar active="home" />
 				<div className="content-wrapper">
@@ -86,87 +81,90 @@ const Homepage = () => {
 							<Logo width={logoSize} link={false} />
 						</div>
 					</div>
-
+					{/* 자기 소개 영역 */}
 					<div className="homepage-container">
-						<div className="homepage-first-area">
-							<div className="homepage-first-area-left-side">
-								<div className="title homepage-title">
-									{INFO.homepage.title}
+						<div className="intro-area">
+							<div className="intro-content">
+								<div className="title intro-title">
+									{HomepageInfo.profiles.title}
+								</div>
+								<div className="title intro-job-title">
+									{HomepageInfo.profiles.jobTitle}
 								</div>
 
-								<div className="subtitle homepage-subtitle">
-									{INFO.homepage.description}
+								<div className="subtitle intro-subtitle">
+									{HomepageInfo.profiles.description}
 								</div>
 							</div>
-
-							<div className="homepage-first-area-right-side">
-								<div className="homepage-image-container">
-									<div className="homepage-image-wrapper">
+							{/* 자기 소개 이미지 */}
+							<div className="intro-image-wrapper">
+								<div className="intro-image-container">
+									<div className="intro-image">
 										<img
 											src="homepage.jpg"
 											alt="about"
-											className="homepage-image"
+											className="intro-img"
 										/>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div className="homepage-socials">
-							{INFO.socials.github && (
+						{/* 소셜 링크 */}
+						<div className="social-links">
+							{/* GitHub */}
+							{HomepageInfo.socials.github && (
 								<a
-									href={INFO.socials.github}
+									href={HomepageInfo.socials.github}
 									target="_blank"
 									rel="noreferrer"
 								>
 									<FontAwesomeIcon
 										icon={faGithub}
-										className="homepage-social-icon"
+										className="social-icon"
 									/>
 								</a>
 							)}
-							{INFO.socials.blog && (
+							{/* Blog */}
+							{HomepageInfo.socials.blog && (
 								<a
-									href={INFO.socials.blog}
+									href={HomepageInfo.socials.blog}
 									target="_blank"
 									rel="noreferrer"
 								>
 									<FontAwesomeIcon
 										icon={faLink}
-										className="homepage-social-icon"
+										className="social-icon"
 									/>
 								</a>
 							)}
-							{INFO.main.email && (
+							{/* Email */}
+							{HomepageInfo.main.email && (
 								<a
-									href={`mailto:${INFO.main.email}`}
+									href={`mailto:${HomepageInfo.main.email}`}
 									target="_blank"
 									rel="noreferrer"
 								>
 									<FontAwesomeIcon
 										icon={faMailBulk}
-										className="homepage-social-icon"
+										className="social-icon"
 									/>
 								</a>
 							)}
 						</div>
-						{/* 기술 스택 */}
-						<div className="homepage-stacks">
-							<div className="homepage-section-title">Stacks</div>
-							<div className="homepage-stacks-list">
-								{INFO.stacks.map((category, index) => (
-									<div
-										key={index}
-										className="homepage-stack-item"
-									>
-										<div className="homepage-stack-category-title">
+						{/* 기술 스택 리스트 */}
+						<div className="stacks-section">
+							<div className="section-title">Stacks</div>
+							<div className="stacks-list">
+								{HomepageInfo.stacks.map((category, index) => (
+									<div key={index} className="stack-item">
+										<div className="stack-category-title">
 											{category.name}
 										</div>
-										<ul className="homepage-stack-list">
+										<ul className="stack-list">
 											{category.items.map(
 												(stack, stackIndex) => (
 													<li key={stackIndex}>
-														•{stack}
+														{stack}
 													</li>
 												)
 											)}
@@ -177,16 +175,16 @@ const Homepage = () => {
 						</div>
 
 						{/* 스킬 */}
-						<div className="homepage-skills">
-							<div className="homepage-section-title">Skills</div>
-							<div className="homepage-skills-content">
-								{INFO.skills.backend && (
-									<div className="homepage-skill-category">
-										<div className="homepage-skill-category-title">
+						<div className="skills-section">
+							<div className="section-title">Skills</div>
+							<div className="skills-content">
+								{HomepageInfo.skills.backend && (
+									<div className="skill-category">
+										<div className="skill-category-title">
 											Backend Engineering
 										</div>
-										<ul className="homepage-skill-list">
-											{INFO.skills.backend.map(
+										<ul className="skill-list">
+											{HomepageInfo.skills.backend.map(
 												(skill, index) => (
 													<li key={index}>
 														• {skill}
@@ -196,13 +194,13 @@ const Homepage = () => {
 										</ul>
 									</div>
 								)}
-								{INFO.skills.software && (
-									<div className="homepage-skill-category">
-										<div className="homepage-skill-category-title">
+								{HomepageInfo.skills.software && (
+									<div className="skill-category">
+										<div className="skill-category-title">
 											Software Development
 										</div>
-										<ul className="homepage-skill-list">
-											{INFO.skills.software.map(
+										<ul className="skill-list">
+											{HomepageInfo.skills.software.map(
 												(skill, index) => (
 													<li key={index}>
 														•{skill}
@@ -212,13 +210,13 @@ const Homepage = () => {
 										</ul>
 									</div>
 								)}
-								{INFO.skills.frontend && (
-									<div className="homepage-skill-category">
-										<div className="homepage-skill-category-title">
+								{HomepageInfo.skills.frontend && (
+									<div className="skill-category">
+										<div className="skill-category-title">
 											Frontend Engineering
 										</div>
-										<ul className="homepage-skill-list">
-											{INFO.skills.frontend.map(
+										<ul className="skill-list">
+											{HomepageInfo.skills.frontend.map(
 												(skill, index) => (
 													<li key={index}>
 														•{skill}
@@ -232,51 +230,51 @@ const Homepage = () => {
 						</div>
 
 						{/* 경험 */}
-						<div className="homepage-activities">
-							<div className="homepage-section-title">
-								Activities
-							</div>
-							<div className="homepage-activities-content">
-								{INFO.activities.map((activity, index) => (
-									<div
-										key={index}
-										className="homepage-activity-item"
-									>
-										<div className="homepage-activity-period">
-											{activity.period}
-										</div>
-										<div className="homepage-activity-details">
-											<div className="homepage-activity-title">
-												{activity.title}
+						<div className="activities-section">
+							<div className="section-title">Activities</div>
+							<div className="activities-content">
+								{HomepageInfo.activities.map(
+									(activity, index) => (
+										<div
+											key={index}
+											className="activity-item"
+										>
+											<div className="activity-period">
+												{activity.period}
 											</div>
-											{activity.subtitle && (
-												<div className="homepage-activity-subtitle">
-													{activity.subtitle}
+											<div className="activity-details">
+												<div className="activity-title">
+													{activity.title}
 												</div>
-											)}
-											{activity.description &&
-												activity.description.length >
-													0 && (
-													<ul className="homepage-activity-description">
-														{activity.description.map(
-															(
-																desc,
-																descIndex
-															) => (
-																<li
-																	key={
-																		descIndex
-																	}
-																>
-																	•{desc}
-																</li>
-															)
-														)}
-													</ul>
+												{activity.subtitle && (
+													<div className="activity-subtitle">
+														{activity.subtitle}
+													</div>
 												)}
+												{activity.description &&
+													activity.description
+														.length > 0 && (
+														<ul className="activity-description">
+															{activity.description.map(
+																(
+																	desc,
+																	descIndex
+																) => (
+																	<li
+																		key={
+																			descIndex
+																		}
+																	>
+																		•{desc}
+																	</li>
+																)
+															)}
+														</ul>
+													)}
+											</div>
 										</div>
-									</div>
-								))}
+									)
+								)}
 							</div>
 						</div>
 
