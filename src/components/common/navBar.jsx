@@ -51,7 +51,7 @@ const NavBar = (props) => {
 								}
 							>
 								<span className="nav-bullet">•</span>
-								<Link to="/articles">Experiences</Link>
+								<Link to="/expriences">Experiences</Link>
 							</li>
 							<li
 								className={

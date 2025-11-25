@@ -13,7 +13,6 @@ import NavBar from "../components/common/navBar";
 // import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
-import SEO from "../data/seo";
 // import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
@@ -50,8 +49,6 @@ const Homepage = () => {
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [logoSize, oldLogoSize]);
-
-	const currentSEO = SEO.find((item) => item.page === "home");
 
 	const logoStyle = {
 		display: "flex",
