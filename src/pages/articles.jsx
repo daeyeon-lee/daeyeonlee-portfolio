@@ -7,7 +7,6 @@ import Logo from "../components/common/logo";
 import Article from "../components/articles/article";
 
 import INFO from "../data/user";
-import SEO from "../data/seo";
 import myArticles from "../data/articles";
 
 import "./styles/articles.css";
@@ -17,17 +16,14 @@ const Articles = () => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const currentSEO = SEO.find((item) => item.page === "articles");
-
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`Articles | ${INFO.main.title}`}</title>
-				<meta name="robots" content="noindex, nofollow" />
+				<title>{`Expriences | ${INFO.main.title}`}</title>
 			</Helmet>
 
 			<div className="page-content">
-				<NavBar active="articles" />
+				<NavBar active="expriences" />
 				<div className="content-wrapper">
 					<div className="articles-logo-container">
 						<div className="articles-logo">
@@ -39,14 +35,14 @@ const Articles = () => {
 						<div className="title articles-title">
 							{INFO.articles.title}
 						</div>
-
 						<div className="subtitle articles-subtitle">
 							{INFO.articles.description}
 						</div>
-
+						{/* 활동 */}
 						<div className="articles-container">
+							<h2>Activities</h2>
 							<div className="articles-wrapper">
-								{myArticles.map((article, index) => (
+								{(myArticles || []).map((article, index) => (
 									<div
 										className="articles-article"
 										key={(index + 1).toString()}
@@ -56,7 +52,43 @@ const Articles = () => {
 											date={article().date}
 											title={article().title}
 											description={article().description}
-											link={"/article/" + (index + 1)}
+											infos={article().infos}
+										/>
+									</div>
+								))}
+							</div>
+						</div>
+						<div className="articles-container">
+							<h2>Certifications</h2>
+							<div className="articles-wrapper">
+								{(INFO.certifications || []).map(
+									(cert, index) => (
+										<div
+											className="articles-article"
+											key={(index + 1).toString()}
+										>
+											<Article
+												date={cert.date}
+												title={cert.title}
+												description={cert.desc}
+											/>
+										</div>
+									)
+								)}
+							</div>
+						</div>
+						<div className="articles-container">
+							<h2>Prize</h2>
+							<div className="articles-wrapper">
+								{(INFO.prize || []).map((cert, index) => (
+									<div
+										className="articles-article"
+										key={(index + 1).toString()}
+									>
+										<Article
+											date={cert.date}
+											title={cert.title}
+											description={cert.desc}
 										/>
 									</div>
 								))}

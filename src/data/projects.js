@@ -5,6 +5,396 @@ import React from "react";
 
 function Project1() {
 	return {
+		period: "2025.10 ~ 2025.11 (7주)",
+		title: "제리뽀",
+		description: "반려동물 종합 관리 플랫폼",
+		linkcolor: "#fbec96",
+		hovercolor: "#F2B518",
+		links: [
+			{
+				info: "Github URL",
+				url: "https://github.com/dlsqja/jellypaw",
+			},
+		],
+		stacks: {
+			frontend: [
+				"Framework: React, React Native",
+				"Language: TypeScript",
+				"UI/스타일링: TailwindCSS",
+				"상태 관리: Zustand",
+			],
+			backend: [
+				"Language: Java 17",
+				"Framework: Spring, Spring Boot 3.3.2, Spring Batch, Spring Scheduler",
+				"Database: MySQL 8.0, MongoDB 8, Redis 7",
+				"ORM: JPA",
+				"인증/보안: Spring Security",
+				"Messaging & Search: Kafka 3.8.1, Elasticsearch 8.11.0",
+				"AI : OpenCV, YOLOv8, DeltaE",
+			],
+			infra: [
+				"Containerization: EC2, AWS S3, Docker, Docker Compose",
+				"CI/CD: Jenkins",
+			],
+		},
+		develop_role: [
+			"데이터베이스 설계 참여",
+			"회원가입 및 로그인",
+			"여행 계획 조회",
+			"공지사항 게시판",
+			"사용자 검색",
+			"메인, 로그인/회원가입, 마이페이지, 검색, 게시판 페이지 구현",
+		],
+		role: "프론트엔드 개발, 디자인",
+		team: "팀 프로젝트 (BE 3, FE 2, AU 1)",
+		logo_image: "../jellypaw_icon.png",
+		thumbnail_image: "../jellypaw_thumbnail.png",
+		architecture_image: "../jellypaw_system_architecture.png",
+		long_description:
+			"OvTrip은 편리하게 여행 계획을 짤 수 있는 여행 계획 관리 플랫폼입니다. 늘어난 여행 수요를 반영하여 여행자들이 보다 편리하게  여행 계획을 세울 수 있도록 하는 것을 목표로 하였습니다.유저는 원하는 기간을 선택해 날짜별 여행 계획을 짤 수 있습니다. 장소 선택시 직선 경로가 지도에 표시됩니다. 마이페이지에서 저장한 여행 계획을 볼 수 있습니다.",
+		develop_content: (
+			<React.Fragment>
+				<h3>■ AS IS</h3>
+				<li>
+					Business
+					<ul>
+						<li>
+							사용자는 카카오, 네이버 소셜 로그인을 이용해
+							회원가입, 로그인을 할 수 있습니다.
+							<ul>
+								<li>소셜 플랫폼은 확장 가능해야 합니다.</li>
+							</ul>
+						</li>
+						<li>
+							로그인 한 사용자는 가입된 유저를 검색할 수 있습니다.
+						</li>
+						<li>
+							자신이 생성한 여행 계획 목록을 확인할 수 있습니다.
+						</li>
+						<li>
+							사용자는 로그인 여부와 관계 없이 공지사항을 볼 수
+							있습니다.
+						</li>
+					</ul>
+				</li>
+				<li>
+					Tech
+					<ul>
+						<li>REST API로 구현합니다.</li>
+						<li>로그인은 JWT를 사용하여 진행합니다.</li>
+						<li>데이터베이스는 Amazon RDS를 사용합니다.</li>
+					</ul>
+				</li>
+				<h3>■ Challenge</h3>
+				<li>Spring Boot를 이용해 REST API를 구현</li>
+				<li>
+					JWT를 사용하여 OAuth2.0 소셜 로그인/회원가입 구현, 인증
+					인터셉터 구현을 진행했습니다.
+				</li>
+				<li>
+					소셜 로그인 구현시 플랫폼에 간편한 API 요청을 위해 Spring
+					Cloud OpenFeign을 사용했습니다.
+					<ul>
+						<li>
+							코드를 간결하게 작성하기 위해 소셜 플랫폼에 API를
+							요청할 때 Spring Cloud의 Feign Client를
+							사용했습니다.
+						</li>
+						<li>
+							다른 소셜 플랫폼에 대한 확장을 열어 두기 위해 소셜
+							플랫폼의 종류에 따라 구현된 서비스를 결정하도록
+							했습니다.
+						</li>
+					</ul>
+				</li>
+				<li>
+					Vue.js를 이용해 프론트엔드 구현, Axios를 이용해 API 요청
+					<ul>
+						<li>
+							빠른 개발 진행을 위해 러닝커브가 낮은 프레임워크인
+							Vue.js를 사용했습니다.
+						</li>
+					</ul>
+				</li>
+				<li>
+					Argument Resolver를 구현하여 Access Token에서 회원정보를
+					가져올 때 컨트롤러에서 파라미터로 쉽게 받을 수 있게 해
+					편의성을 늘렸습니다. (기존코드 3줄 → 1줄)
+				</li>
+				<li>
+					Preflgiht에 Access token이 담겨있지 않아 API 호출 실패하던
+					에러 해결{" "}
+					<a href="https://xntifrxgile.tistory.com/70">
+						(해결 과정 정리글)
+					</a>
+					<ul>
+						<li>
+							Preflight는 HTTP OPTIONS으로 요청을 보내기 때문에,
+							HTTP OPTIONS에 대한 요청은 토큰 값 검증을 하지
+							않도록 변경했습니다.
+						</li>
+					</ul>
+				</li>
+				<h3>■ TO BE</h3>
+				<li>
+					삼성 청년 SW 아카데미 프로젝트 경진대회 우수상을 받았습니다.
+					(10팀 중 2등)
+				</li>
+				<h2>🏫 배운점</h2>
+				<li>
+					소셜 회원가입을 구현하며 OAuth2.0에 대해 이해할 수
+					있었습니다.
+				</li>
+				<li>Feign Client에 대해 학습할 수 있었습니다.</li>
+				<li>
+					인터셉터를 구현하며 API 요청 흐름을 이해할 수 있었습니다.
+				</li>
+				<li>
+					axios, vuex, router, 비동기에 대해 학습할 수 있었습니다.
+				</li>
+				<li>
+					Gitflow를 적용하여 기능마다 branch를 생성해 개발하며 Git에
+					대해 학습할 수 있었습니다.
+				</li>
+			</React.Fragment>
+		),
+		review: (
+			<React.Fragment>
+				<h3>첫 프론트엔드 개발</h3>
+				<p>
+					프론트엔드 개발을 처음으로 경험하며 많은 것을 느꼈습니다.
+					프론트엔드가 어떤식으로 API를 요청하고 받아서 데이터를
+					출력하는지 등에 관한 것을 알게되었습니다. 어떤 식으로
+					데이터를 전해줘야 편한지와 같이 프론트엔드에 대해서 더욱
+					깊게 이해할 수 있었습니다.
+				</p>
+				<h3>소셜 로그인의 이해</h3>
+				<p>
+					OAuth2.0를 이해하고 구현할 수 있었습니다. 이번에 구현할 때,
+					Refresh Token과 Refresh Token의 만료 시간을 엔티티에
+					저장해서 사용했는데 이 경우 Refresh Token이 만료가
+					됐는지 만료 시간을 계속해서 검증하는 과정이
+					필요했습니다. Redis를 사용하는 경우, TTL을 이용하여 Refresh
+					Token이 만료되면 Redis에서 삭제되도록 구현할 수
+					있습니다.이러한 방식으로 구현하는 경우엔 Redis에 해당하는
+					데이터가 존재하는지 유무만 검사하면 되기
+					때문에 훨씬 편리하게 구현할 수 있다고 생각합니다. 다음엔
+					Refresh Token을 Redis에 저장하는 방식으로 구현해보고
+					싶습니다.
+				</p>
+			</React.Fragment>
+		),
+	};
+}
+
+function Project2() {
+	return {
+		period: "2025.09 (4주)",
+		title: "씨네모아",
+		description: "크라우드 펀딩 기반 영화관 대관 자동화 플랫폼",
+		linkcolor: "#fdc3c4",
+		hovercolor: "#FF533B",
+		links: [
+			{
+				info: "Github URL",
+				url: "https://github.com/daeyeon-lee/Cinemoa",
+			},
+		],
+		stacks: {
+			frontend: [
+				"Framework: Next.js",
+				"Language: TypeScript",
+				"UI/스타일링: TailwindCSS",
+				"상태 관리: Zustand",
+			],
+			backend: [
+				"Language: Java 17",
+				"Framework: Spring Boot 3.5.5",
+				"Database: MySQL, Redis",
+				"ORM: JPA",
+				"인증/보안:Spring Security",
+				"AI : Google Colab(모델 서빙 환경), Wan 2.2(모델)",
+			],
+			infra: ["Containerization: Docker", "CI/CD: Jenkins"],
+		},
+		develop_role: [
+			"React + Zustand 기반 공통 UI 컴포넌트와 디자인 시스템을 구축",
+			"사용자 역할 상태에 따른 UI 흐름 설계 및 조건부 메뉴 렌더링",
+			"REST API 연동 개발",
+		],
+		role: "프론트엔드 개발, 발표",
+		team: "팀 프로젝트 (BE 2, FE 2, FS 2)",
+		logo_image: "../cinemoa_icon.png",
+		thumbnail_image: "../cienmoa-thumbnail.png",
+		architecture_image: "../cinemoa_system_architecture.png",
+		long_description:
+			"기존에 분산되어 있던 대관 신청-관객 모집-결제-정산 과정을 하나로 통합하여, 대관 수요자들이 안전하고 편리하게 원하는 영화를 함께 모여 볼 수 있는 환경을 제공합니다.",
+		develop_content: (
+			<React.Fragment>
+				<h3>■ AS IS</h3>
+				<li>
+					Business
+					<ul>
+						<li>
+							사용자는 자신의 입출금 계좌를 1개 개설할 수
+							있습니다.
+							<ul>
+								<li>
+									계좌 개설 시 계좌번호가 생성되며, 다른
+									회원의 계좌 번호와 중복되지 않아야합니다.
+								</li>
+							</ul>
+						</li>
+						<li>
+							사용자의 일별 대표 기분을 월 단위로 조회할 수
+							있습니다.
+						</li>
+						<li>
+							사용자는 자신이 로그인한 모든 기기에서 알림을 받을
+							수 있습니다.
+							<ul>
+								<li>
+									알림은 전체 알림과 개인 알림 두 종류가
+									존재합니다.
+								</li>
+								<li>
+									전체 알림 생성은 관리자만 할 수 있습니다.
+								</li>
+								<li>
+									알림의 양식은 보내는 종류에 따라 다릅니다.
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					Tech
+					<ul>
+						<li>REST API로 구현합니다.</li>
+						<li>
+							전체 알림 생성은 ‘ADMIN’ 타입의 회원만 가능합니다.
+						</li>
+						<li>AWS EC2로 배포합니다.</li>
+						<li>
+							서버는 Docker와 Jenkins를 사용해 Github의 브랜치에
+							push시 자동으로 배포되도록 합니다.
+						</li>
+						<li>SonarQube를 사용해 정적 코드 분석을 진행합니다.</li>
+						<li>
+							localStorage에 토큰을 저장하기 때문에 XSS 방어를
+							진행합니다.
+						</li>
+					</ul>
+				</li>
+				<h3>■ Challenge</h3>
+				<li>Spring Boot를 이용해 REST API를 구현</li>
+				<li>
+					계좌 번호가 겹치지 않게 하기 위해 생성 시간의 timestamp를
+					이용해 생성
+				</li>
+				<li>
+					데이터 베이스의 경우
+					<ul>
+						<li>계좌와 일별 기분 데이터는 MySQL에 저장</li>
+						<li>
+							양식이 없고 종류마다 다른 알림 데이터의 경우
+							MongoDB에 저장
+						</li>
+						<li>JPA를 이용해 데이터베이스 조회</li>
+					</ul>
+				</li>
+				<li>
+					알림 서비스를 위해 Firebase Cloud Messaging 사용
+					<ul>
+						<li>
+							로그인 할 때마다 디바이스 토큰을 저장하도록 함 →
+							유저의 모든 기기에 알림이 가도록 함
+						</li>
+						<li>
+							새로운 토큰을 저장할 때, 전체 알림을 위해 notice
+							Topic을 구독하도록 설정
+						</li>
+						<li>
+							개인 알림의 경우 디바이스 토큰을 이용해서 발송, 전체
+							알림의 경우 notice topic을 구독하고 있는 토큰에게
+							전송
+						</li>
+					</ul>
+				</li>
+				<li>
+					Github의 Webhook을 이용해 브랜치에 push시 자동으로
+					배포되도록 Jenkins pipeline 작성
+					<ul>
+						<li>Dockerfile을 이용해 이미지 빌드 후 배포 진행</li>
+					</ul>
+				</li>
+				<li>
+					pipeline의 build 단계 이후 SonarQube 정적 코드 분석 진행
+				</li>
+				<li>
+					Naver의 lucy xss filter를 이용해 XSS 방어 설정
+					<ul>
+						<li>
+							MessageConverter에 처리할 문자열이 설정되어있는
+							Object Mapper를 등록해 JSON 데이터의 XSS 방어 설정
+							진행
+						</li>
+					</ul>
+				</li>
+			</React.Fragment>
+		),
+		review: (
+			<React.Fragment>
+				<h3>데이터 저장 방법에 대한 토론</h3>
+				<p>
+					팀원들과 함께 이체의 경우 데이터를 어떻게 저장할지에 대해
+					토론을 했습니다. 생각한 방법은
+					<br />
+					1. 이체라는 타입을 만들어서 저장. <br />
+					2. 입금/출금 두 가지로 나뉘어서 저장. <br />
+					3. 입금/출금 두가지로 나눠서도 저장하고 이체도 저장해서 총
+					3번의 데이터 저장. <br />
+					시중 은행 개발자분을 만나 데이터베이스 설계에 대해 자문을
+					구했으며, 많은 고민 끝에 거래내역 조회와 같은 부분에서
+					편리하게 하기 위해 2번의 방법을 선택했습니다.
+				</p>
+				<h3>겹치지 않게 하기 위해 Timestamp를 사용</h3>
+				<p>
+					UUID를 사용할수도 있지만, 계좌 번호의 경우 숫자로
+					이루어져있는 것이 보편적이기 때문에 숫자로 이루어진 번호를
+					생성하고 싶었습니다. <br />
+					시중 은행 개발자분께 겹치지 않게 하기 위해선 Timestamp를
+					이용하는 것이 좋다는 조언을 듣고, Timestamp를 이용해
+					yyMM-ddHH-mmssSSS 형식의 계좌 번호를 생성했습니다.
+				</p>
+				<h3>비정형 데이터를 저장하기 위해 MongoDB 사용</h3>
+				<p>
+					RDBMS를 주로 사용하다가 처음으로 MongoDB를 사용해보았습니다.
+					RDBMS와 비교했을 때 장단점이 명확하기 때문에 데이터의 특성에
+					맞는 DB를 선택해야 된다는 것을 알게되었습니다.
+				</p>
+				<h3>정적 코드 분석을 위해 SonarQube 사용</h3>
+				<p>
+					정적 코드 분석 도구인 SonarQube를 연동해서 사용했습니다. 
+					코드리뷰를 진행하였지만 백엔드 코드의 경우 CodeSmell이
+					200개에 가까운 결과가 나왔습니다.  가독성 있고 유지보수하기
+					쉬운 코드를 작성하기 위해 앞으로 더욱 노력해야겠다고
+					생각했습니다.
+				</p>
+				<h3>Github Issue 사용</h3>
+				<p>
+					Github의 Issue를 사용해서 개발을 진행했습니다. 먼저 개발할
+					기능에 대해 Issue를 작성하고, PR에 Issue를 연결하는 방식으로
+					진행했습니다. 먼저 Issue를 작성하며 구현할 기능을
+					정리함으로써 개발을 좀 더 빠르고 정확하게 할 수 있었습니다.
+				</p>
+			</React.Fragment>
+		),
+	};
+}
+
+function Project3() {
+	return {
 		period: "2025.07 ~ 2025.08 (7주)",
 		title: "토닥",
 		description: "WEBRTC를 활용한 반려동물 비대면 진료 서비스",
@@ -331,396 +721,6 @@ function Project1() {
 	};
 }
 
-function Project2() {
-	return {
-		period: "2025.09 (4주)",
-		title: "씨네모아",
-		description: "크라우드 펀딩 기반 영화관 대관 자동화 플랫폼",
-		linkcolor: "#fdc3c4",
-		hovercolor: "#FF533B",
-		links: [
-			{
-				info: "Github URL",
-				url: "https://github.com/daeyeon-lee/Cinemoa",
-			},
-		],
-		stacks: {
-			frontend: [
-				"Framework: Next.js",
-				"Language: TypeScript",
-				"UI/스타일링: TailwindCSS",
-				"상태 관리: Zustand",
-			],
-			backend: [
-				"Language: Java 17",
-				"Framework: Spring Boot 3.5.5",
-				"Database: MySQL, Redis",
-				"ORM: JPA",
-				"인증/보안:Spring Security",
-				"AI : Google Colab(모델 서빙 환경), Wan 2.2(모델)",
-			],
-			infra: ["Containerization: Docker", "CI/CD: Jenkins"],
-		},
-		develop_role: [
-			"React + Zustand 기반 공통 UI 컴포넌트와 디자인 시스템을 구축",
-			"사용자 역할 상태에 따른 UI 흐름 설계 및 조건부 메뉴 렌더링",
-			"REST API 연동 개발",
-		],
-		role: "프론트엔드 개발, 발표",
-		team: "팀 프로젝트 (BE 2, FE 2, FS 2)",
-		logo_image: "../cinemoa_icon.png",
-		thumbnail_image: "../cienmoa-thumbnail.png",
-		architecture_image: "../cinemoa_system_architecture.png",
-		long_description:
-			"기존에 분산되어 있던 대관 신청-관객 모집-결제-정산 과정을 하나로 통합하여, 대관 수요자들이 안전하고 편리하게 원하는 영화를 함께 모여 볼 수 있는 환경을 제공합니다.",
-		develop_content: (
-			<React.Fragment>
-				<h3>■ AS IS</h3>
-				<li>
-					Business
-					<ul>
-						<li>
-							사용자는 자신의 입출금 계좌를 1개 개설할 수
-							있습니다.
-							<ul>
-								<li>
-									계좌 개설 시 계좌번호가 생성되며, 다른
-									회원의 계좌 번호와 중복되지 않아야합니다.
-								</li>
-							</ul>
-						</li>
-						<li>
-							사용자의 일별 대표 기분을 월 단위로 조회할 수
-							있습니다.
-						</li>
-						<li>
-							사용자는 자신이 로그인한 모든 기기에서 알림을 받을
-							수 있습니다.
-							<ul>
-								<li>
-									알림은 전체 알림과 개인 알림 두 종류가
-									존재합니다.
-								</li>
-								<li>
-									전체 알림 생성은 관리자만 할 수 있습니다.
-								</li>
-								<li>
-									알림의 양식은 보내는 종류에 따라 다릅니다.
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					Tech
-					<ul>
-						<li>REST API로 구현합니다.</li>
-						<li>
-							전체 알림 생성은 ‘ADMIN’ 타입의 회원만 가능합니다.
-						</li>
-						<li>AWS EC2로 배포합니다.</li>
-						<li>
-							서버는 Docker와 Jenkins를 사용해 Github의 브랜치에
-							push시 자동으로 배포되도록 합니다.
-						</li>
-						<li>SonarQube를 사용해 정적 코드 분석을 진행합니다.</li>
-						<li>
-							localStorage에 토큰을 저장하기 때문에 XSS 방어를
-							진행합니다.
-						</li>
-					</ul>
-				</li>
-				<h3>■ Challenge</h3>
-				<li>Spring Boot를 이용해 REST API를 구현</li>
-				<li>
-					계좌 번호가 겹치지 않게 하기 위해 생성 시간의 timestamp를
-					이용해 생성
-				</li>
-				<li>
-					데이터 베이스의 경우
-					<ul>
-						<li>계좌와 일별 기분 데이터는 MySQL에 저장</li>
-						<li>
-							양식이 없고 종류마다 다른 알림 데이터의 경우
-							MongoDB에 저장
-						</li>
-						<li>JPA를 이용해 데이터베이스 조회</li>
-					</ul>
-				</li>
-				<li>
-					알림 서비스를 위해 Firebase Cloud Messaging 사용
-					<ul>
-						<li>
-							로그인 할 때마다 디바이스 토큰을 저장하도록 함 →
-							유저의 모든 기기에 알림이 가도록 함
-						</li>
-						<li>
-							새로운 토큰을 저장할 때, 전체 알림을 위해 notice
-							Topic을 구독하도록 설정
-						</li>
-						<li>
-							개인 알림의 경우 디바이스 토큰을 이용해서 발송, 전체
-							알림의 경우 notice topic을 구독하고 있는 토큰에게
-							전송
-						</li>
-					</ul>
-				</li>
-				<li>
-					Github의 Webhook을 이용해 브랜치에 push시 자동으로
-					배포되도록 Jenkins pipeline 작성
-					<ul>
-						<li>Dockerfile을 이용해 이미지 빌드 후 배포 진행</li>
-					</ul>
-				</li>
-				<li>
-					pipeline의 build 단계 이후 SonarQube 정적 코드 분석 진행
-				</li>
-				<li>
-					Naver의 lucy xss filter를 이용해 XSS 방어 설정
-					<ul>
-						<li>
-							MessageConverter에 처리할 문자열이 설정되어있는
-							Object Mapper를 등록해 JSON 데이터의 XSS 방어 설정
-							진행
-						</li>
-					</ul>
-				</li>
-			</React.Fragment>
-		),
-		review: (
-			<React.Fragment>
-				<h3>데이터 저장 방법에 대한 토론</h3>
-				<p>
-					팀원들과 함께 이체의 경우 데이터를 어떻게 저장할지에 대해
-					토론을 했습니다. 생각한 방법은
-					<br />
-					1. 이체라는 타입을 만들어서 저장. <br />
-					2. 입금/출금 두 가지로 나뉘어서 저장. <br />
-					3. 입금/출금 두가지로 나눠서도 저장하고 이체도 저장해서 총
-					3번의 데이터 저장. <br />
-					시중 은행 개발자분을 만나 데이터베이스 설계에 대해 자문을
-					구했으며, 많은 고민 끝에 거래내역 조회와 같은 부분에서
-					편리하게 하기 위해 2번의 방법을 선택했습니다.
-				</p>
-				<h3>겹치지 않게 하기 위해 Timestamp를 사용</h3>
-				<p>
-					UUID를 사용할수도 있지만, 계좌 번호의 경우 숫자로
-					이루어져있는 것이 보편적이기 때문에 숫자로 이루어진 번호를
-					생성하고 싶었습니다. <br />
-					시중 은행 개발자분께 겹치지 않게 하기 위해선 Timestamp를
-					이용하는 것이 좋다는 조언을 듣고, Timestamp를 이용해
-					yyMM-ddHH-mmssSSS 형식의 계좌 번호를 생성했습니다.
-				</p>
-				<h3>비정형 데이터를 저장하기 위해 MongoDB 사용</h3>
-				<p>
-					RDBMS를 주로 사용하다가 처음으로 MongoDB를 사용해보았습니다.
-					RDBMS와 비교했을 때 장단점이 명확하기 때문에 데이터의 특성에
-					맞는 DB를 선택해야 된다는 것을 알게되었습니다.
-				</p>
-				<h3>정적 코드 분석을 위해 SonarQube 사용</h3>
-				<p>
-					정적 코드 분석 도구인 SonarQube를 연동해서 사용했습니다. 
-					코드리뷰를 진행하였지만 백엔드 코드의 경우 CodeSmell이
-					200개에 가까운 결과가 나왔습니다.  가독성 있고 유지보수하기
-					쉬운 코드를 작성하기 위해 앞으로 더욱 노력해야겠다고
-					생각했습니다.
-				</p>
-				<h3>Github Issue 사용</h3>
-				<p>
-					Github의 Issue를 사용해서 개발을 진행했습니다. 먼저 개발할
-					기능에 대해 Issue를 작성하고, PR에 Issue를 연결하는 방식으로
-					진행했습니다. 먼저 Issue를 작성하며 구현할 기능을
-					정리함으로써 개발을 좀 더 빠르고 정확하게 할 수 있었습니다.
-				</p>
-			</React.Fragment>
-		),
-	};
-}
-
-function Project3() {
-	return {
-		period: "2025.10 ~ 2025.11 (7주)",
-		title: "제리뽀",
-		description: "반려동물 종합 관리 플랫폼",
-		linkcolor: "#fbec96",
-		hovercolor: "#F2B518",
-		links: [
-			{
-				info: "Github URL",
-				url: "https://github.com/dlsqja/jellypaw",
-			},
-		],
-		stacks: {
-			frontend: [
-				"Framework: React, React Native",
-				"Language: TypeScript",
-				"UI/스타일링: TailwindCSS",
-				"상태 관리: Zustand",
-			],
-			backend: [
-				"Language: Java 17",
-				"Framework: Spring, Spring Boot 3.3.2, Spring Batch, Spring Scheduler",
-				"Database: MySQL 8.0, MongoDB 8, Redis 7",
-				"ORM: JPA",
-				"인증/보안: Spring Security",
-				"Messaging & Search: Kafka 3.8.1, Elasticsearch 8.11.0",
-				"AI : OpenCV, YOLOv8, DeltaE",
-			],
-			infra: [
-				"Containerization: EC2, AWS S3, Docker, Docker Compose",
-				"CI/CD: Jenkins",
-			],
-		},
-		develop_role: [
-			"데이터베이스 설계 참여",
-			"회원가입 및 로그인",
-			"여행 계획 조회",
-			"공지사항 게시판",
-			"사용자 검색",
-			"메인, 로그인/회원가입, 마이페이지, 검색, 게시판 페이지 구현",
-		],
-		role: "프론트엔드 개발, 디자인",
-		team: "팀 프로젝트 (BE 3, FE 2, AU 1)",
-		logo_image: "../jellypaw_icon.png",
-		thumbnail_image: "../jellypaw_thumbnail.png",
-		architecture_image: "../jellypaw_system_architecture.png",
-		long_description:
-			"OvTrip은 편리하게 여행 계획을 짤 수 있는 여행 계획 관리 플랫폼입니다. 늘어난 여행 수요를 반영하여 여행자들이 보다 편리하게  여행 계획을 세울 수 있도록 하는 것을 목표로 하였습니다.유저는 원하는 기간을 선택해 날짜별 여행 계획을 짤 수 있습니다. 장소 선택시 직선 경로가 지도에 표시됩니다. 마이페이지에서 저장한 여행 계획을 볼 수 있습니다.",
-		develop_content: (
-			<React.Fragment>
-				<h3>■ AS IS</h3>
-				<li>
-					Business
-					<ul>
-						<li>
-							사용자는 카카오, 네이버 소셜 로그인을 이용해
-							회원가입, 로그인을 할 수 있습니다.
-							<ul>
-								<li>소셜 플랫폼은 확장 가능해야 합니다.</li>
-							</ul>
-						</li>
-						<li>
-							로그인 한 사용자는 가입된 유저를 검색할 수 있습니다.
-						</li>
-						<li>
-							자신이 생성한 여행 계획 목록을 확인할 수 있습니다.
-						</li>
-						<li>
-							사용자는 로그인 여부와 관계 없이 공지사항을 볼 수
-							있습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Tech
-					<ul>
-						<li>REST API로 구현합니다.</li>
-						<li>로그인은 JWT를 사용하여 진행합니다.</li>
-						<li>데이터베이스는 Amazon RDS를 사용합니다.</li>
-					</ul>
-				</li>
-				<h3>■ Challenge</h3>
-				<li>Spring Boot를 이용해 REST API를 구현</li>
-				<li>
-					JWT를 사용하여 OAuth2.0 소셜 로그인/회원가입 구현, 인증
-					인터셉터 구현을 진행했습니다.
-				</li>
-				<li>
-					소셜 로그인 구현시 플랫폼에 간편한 API 요청을 위해 Spring
-					Cloud OpenFeign을 사용했습니다.
-					<ul>
-						<li>
-							코드를 간결하게 작성하기 위해 소셜 플랫폼에 API를
-							요청할 때 Spring Cloud의 Feign Client를
-							사용했습니다.
-						</li>
-						<li>
-							다른 소셜 플랫폼에 대한 확장을 열어 두기 위해 소셜
-							플랫폼의 종류에 따라 구현된 서비스를 결정하도록
-							했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Vue.js를 이용해 프론트엔드 구현, Axios를 이용해 API 요청
-					<ul>
-						<li>
-							빠른 개발 진행을 위해 러닝커브가 낮은 프레임워크인
-							Vue.js를 사용했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Argument Resolver를 구현하여 Access Token에서 회원정보를
-					가져올 때 컨트롤러에서 파라미터로 쉽게 받을 수 있게 해
-					편의성을 늘렸습니다. (기존코드 3줄 → 1줄)
-				</li>
-				<li>
-					Preflgiht에 Access token이 담겨있지 않아 API 호출 실패하던
-					에러 해결{" "}
-					<a href="https://xntifrxgile.tistory.com/70">
-						(해결 과정 정리글)
-					</a>
-					<ul>
-						<li>
-							Preflight는 HTTP OPTIONS으로 요청을 보내기 때문에,
-							HTTP OPTIONS에 대한 요청은 토큰 값 검증을 하지
-							않도록 변경했습니다.
-						</li>
-					</ul>
-				</li>
-				<h3>■ TO BE</h3>
-				<li>
-					삼성 청년 SW 아카데미 프로젝트 경진대회 우수상을 받았습니다.
-					(10팀 중 2등)
-				</li>
-				<h2>🏫 배운점</h2>
-				<li>
-					소셜 회원가입을 구현하며 OAuth2.0에 대해 이해할 수
-					있었습니다.
-				</li>
-				<li>Feign Client에 대해 학습할 수 있었습니다.</li>
-				<li>
-					인터셉터를 구현하며 API 요청 흐름을 이해할 수 있었습니다.
-				</li>
-				<li>
-					axios, vuex, router, 비동기에 대해 학습할 수 있었습니다.
-				</li>
-				<li>
-					Gitflow를 적용하여 기능마다 branch를 생성해 개발하며 Git에
-					대해 학습할 수 있었습니다.
-				</li>
-			</React.Fragment>
-		),
-		review: (
-			<React.Fragment>
-				<h3>첫 프론트엔드 개발</h3>
-				<p>
-					프론트엔드 개발을 처음으로 경험하며 많은 것을 느꼈습니다.
-					프론트엔드가 어떤식으로 API를 요청하고 받아서 데이터를
-					출력하는지 등에 관한 것을 알게되었습니다. 어떤 식으로
-					데이터를 전해줘야 편한지와 같이 프론트엔드에 대해서 더욱
-					깊게 이해할 수 있었습니다.
-				</p>
-				<h3>소셜 로그인의 이해</h3>
-				<p>
-					OAuth2.0를 이해하고 구현할 수 있었습니다. 이번에 구현할 때,
-					Refresh Token과 Refresh Token의 만료 시간을 엔티티에
-					저장해서 사용했는데 이 경우 Refresh Token이 만료가
-					됐는지 만료 시간을 계속해서 검증하는 과정이
-					필요했습니다. Redis를 사용하는 경우, TTL을 이용하여 Refresh
-					Token이 만료되면 Redis에서 삭제되도록 구현할 수
-					있습니다.이러한 방식으로 구현하는 경우엔 Redis에 해당하는
-					데이터가 존재하는지 유무만 검사하면 되기
-					때문에 훨씬 편리하게 구현할 수 있다고 생각합니다. 다음엔
-					Refresh Token을 Redis에 저장하는 방식으로 구현해보고
-					싶습니다.
-				</p>
-			</React.Fragment>
-		),
-	};
-}
-
 function Project4() {
 	return {
 		period: "2023.10 ~ 2023.11 (7주)",
@@ -763,7 +763,7 @@ function Project4() {
 		thumbnail_image: "../guemjjoki-thumbnail.png",
 		architecture_image: "../guemjjoki_system_architecture.png",
 		long_description:
-			"금쪼기는 챌린지, 가계부, 금융상품을 하나의 플랫폼으로 합쳐 소비습관 개선을 위한 챌린지를 통해 금융상품을 리워드로 제공하는 서비스입니다.",
+			"금쪼기는 챌린지, 가계부, 금융상품을 하나의 플랫폼으로 합쳐 소비습관 개선을 위한 챌린지를 통해 금융상품을 리워드로 제공하는 서비스",
 		develop_content: (
 			<React.Fragment>
 				<h3>■ AS IS</h3>
@@ -941,6 +941,6 @@ function Project4() {
 	};
 }
 
-const myProjects = [Project3, Project2, Project1, Project4];
+const myProjects = [Project1, Project2, Project3, Project4];
 
 export default myProjects;

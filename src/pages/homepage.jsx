@@ -12,7 +12,7 @@ import NavBar from "../components/common/navBar";
 // import Works from "../components/homepage/works";
 // import AllProjects from "../components/projects/allProjects";
 
-import HomepageInfo from "../data/user";
+import INFO from "../data/user";
 import SEO from "../data/seo";
 // import myArticles from "../data/articles";
 
@@ -86,14 +86,14 @@ const Homepage = () => {
 						<div className="intro-area">
 							<div className="intro-content">
 								<div className="title intro-title">
-									{HomepageInfo.profiles.title}
+									{INFO.homepage.name}
 								</div>
 								<div className="title intro-job-title">
-									{HomepageInfo.profiles.jobTitle}
+									{INFO.homepage.title}
 								</div>
 
 								<div className="subtitle intro-subtitle">
-									{HomepageInfo.profiles.description}
+									{INFO.homepage.description}
 								</div>
 							</div>
 							{/* 자기 소개 이미지 */}
@@ -112,9 +112,9 @@ const Homepage = () => {
 						{/* 소셜 링크 */}
 						<div className="social-links">
 							{/* GitHub */}
-							{HomepageInfo.socials.github && (
+							{INFO.socials.github && (
 								<a
-									href={HomepageInfo.socials.github}
+									href={INFO.socials.github}
 									target="_blank"
 									rel="noreferrer"
 								>
@@ -125,9 +125,9 @@ const Homepage = () => {
 								</a>
 							)}
 							{/* Blog */}
-							{HomepageInfo.socials.blog && (
+							{INFO.socials.blog && (
 								<a
-									href={HomepageInfo.socials.blog}
+									href={INFO.socials.blog}
 									target="_blank"
 									rel="noreferrer"
 								>
@@ -138,9 +138,9 @@ const Homepage = () => {
 								</a>
 							)}
 							{/* Email */}
-							{HomepageInfo.main.email && (
+							{INFO.main.email && (
 								<a
-									href={`mailto:${HomepageInfo.main.email}`}
+									href={`mailto:${INFO.main.email}`}
 									target="_blank"
 									rel="noreferrer"
 								>
@@ -155,13 +155,13 @@ const Homepage = () => {
 						<div className="stacks-section">
 							<div className="section-title">Stacks</div>
 							<div className="stacks-list">
-								{HomepageInfo.stacks.map((category, index) => (
+								{(INFO.stacks || []).map((category, index) => (
 									<div key={index} className="stack-item">
 										<div className="stack-category-title">
-											{category.name}
+											{category.title}
 										</div>
 										<ul className="stack-list">
-											{category.items.map(
+											{category.skill.map(
 												(stack, stackIndex) => (
 													<li key={stackIndex}>
 														{stack}
@@ -178,13 +178,13 @@ const Homepage = () => {
 						<div className="skills-section">
 							<div className="section-title">Skills</div>
 							<div className="skills-content">
-								{HomepageInfo.skills.backend && (
+								{INFO.skills?.backend && (
 									<div className="skill-category">
 										<div className="skill-category-title">
 											Backend Engineering
 										</div>
 										<ul className="skill-list">
-											{HomepageInfo.skills.backend.map(
+											{INFO.skills.backend.map(
 												(skill, index) => (
 													<li key={index}>
 														• {skill}
@@ -194,13 +194,13 @@ const Homepage = () => {
 										</ul>
 									</div>
 								)}
-								{HomepageInfo.skills.software && (
+								{INFO.skills?.software && (
 									<div className="skill-category">
 										<div className="skill-category-title">
 											Software Development
 										</div>
 										<ul className="skill-list">
-											{HomepageInfo.skills.software.map(
+											{INFO.skills.software.map(
 												(skill, index) => (
 													<li key={index}>
 														•{skill}
@@ -210,13 +210,13 @@ const Homepage = () => {
 										</ul>
 									</div>
 								)}
-								{HomepageInfo.skills.frontend && (
+								{INFO.skills?.frontend && (
 									<div className="skill-category">
 										<div className="skill-category-title">
 											Frontend Engineering
 										</div>
 										<ul className="skill-list">
-											{HomepageInfo.skills.frontend.map(
+											{INFO.skills.frontend.map(
 												(skill, index) => (
 													<li key={index}>
 														•{skill}
@@ -233,7 +233,7 @@ const Homepage = () => {
 						<div className="activities-section">
 							<div className="section-title">Activities</div>
 							<div className="activities-content">
-								{HomepageInfo.activities.map(
+								{(INFO.activities || []).map(
 									(activity, index) => (
 										<div
 											key={index}

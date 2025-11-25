@@ -1,35 +1,165 @@
-const HomepageInfo = {
+// const HomepageInfo = {
+// 	main: {
+// 		title: "Daeyeon Lee - Portfolio",
+// 		name: "Daeyeon Lee",
+// 		email: "angellee98@naver.com",
+// 		logo: "../logo.png",
+// 		jobTitle: "Frontend Developer",
+// 	},
+
+// 	socials: {
+// 		github: "https://github.com/daeyeon-lee",
+// 		instagram: "https://instagram.com/",
+// 		blog: "https://velog.io/@dylee98/",
+// 	},
+
+// 	profiles: {
+// 		title: "이대연",
+// 		jobTitle: "Frontend Developer",
+// 		description: [
+// 			"사용자 중심의 웹 애플리케이션 개발에 집중하며,",
+// 			"성능 최적화와 접근성을 고려한 프론트엔드 개발을 통해 사용자 경험을 향상시키는 개발자입니다.",
+// 		],
+// 	},
+
+// 	stacks: [
+// 		{
+// 			name: "Languages",
+// 			items: ["Python", "JavaScript", "TypeScript"],
+// 		},
+// 		{
+// 			name: "Frontend",
+// 			items: [
+// 				"React",
+// 				"React Native",
+// 				"Next.js",
+// 				"Vue.js",
+// 				"Tailwind CSS",
+// 				"HTML",
+// 				"CSS",
+// 			],
+// 		},
+// 		{
+// 			name: "Database",
+// 			items: ["MySQL"],
+// 		},
+// 		{
+// 			name: "Tools",
+// 			items: ["Git", "GitHub", "GitLab", "Jira", "Figma"],
+// 		},
+// 	],
+
+// 	skills: {
+// 		frontend: [
+// 			"4개의 팀 프로젝트 개발 경험",
+// 			"Swagger 기반 REST API 연동 개발 경험",
+// 			"Vue 3 Composition API 기반 UI 컴포넌트 설계 ",
+// 			"React + Zustand 기반 공통 UI 컴포넌트와 디자인 시스템을 구축",
+// 			"Next.js 기반 공통 UI 컴포넌트와 디자인 시스템을 구축",
+// 			"React Native + React Webview 기반의 하이브리드 앱 개발 경험",
+// 			"FCM을 이용한 알림 기능 개발 경험",
+// 			"반응형 디자인을 고려한 마크업 UI 개발",
+// 		],
+// 	},
+
+// 	about: {
+// 		title: "I’m Tharindu N. I live in Sri Lanka, where I design the future.",
+// 		description:
+// 			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind. Collaborating with others is a great way to learn and grow, and I'm always open to new ideas and feedback.",
+// 	},
+
+// 	articles: {
+// 		title: "I'm passionate about pushing the boundaries of what's possible and inspiring the next generation of innovators.",
+// 		description:
+// 			"Chronological collection of my long-form thoughts on programming, leadership, product design, and more.",
+// 	},
+// };
+
+// export default HomepageInfo;
+
+const INFO = {
 	main: {
-		title: "Daeyeon Lee - Portfolio",
-		name: "Daeyeon Lee",
+		title: "이대연, Portfolio",
+		name: "이대연",
 		email: "angellee98@naver.com",
 		logo: "../logo.png",
-		jobTitle: "Frontend Developer",
 	},
 
 	socials: {
 		github: "https://github.com/daeyeon-lee",
-		instagram: "https://instagram.com/",
 		blog: "https://velog.io/@dylee98/",
 	},
 
-	profiles: {
-		title: "이대연",
-		jobTitle: "Frontend Developer",
+	homepage: {
+		name: "이대연",
+		title: "Frontend Developer",
+		description:
+			"사용자 중심의 웹 애플리케이션 개발에 집중하며,성능 최적화와 접근성을 고려한 프론트엔드 개발을 통해 사용자 경험을 향상시키는 개발자입니다.",
+	},
+
+	about: {
+		title: "안녕하세요. 이대연입니다.",
 		description: [
-			"사용자 중심의 웹 애플리케이션 개발에 집중하며,",
-			"성능 최적화와 접근성을 고려한 프론트엔드 개발을 통해 사용자 경험을 향상시키는 개발자입니다.",
+			"새로운 기술을 배우고 경험하는 것을 즐깁니다.",
+			"도전적인 목표를 세우고 성취하는 것에 뿌듯함을 느낍니다.",
+			"한 번 시작하면 끝까지 파고드는 기질을 갖고 있습니다.",
+		],
+		frontend: [
+			"Vue 3 Composition API 기반 UI 컴포넌트 설계",
+			"Pinia 기반 상태 관리",
+			"Swagger 기반 REST API 연동 개발",
+			"서비스 전체 목업 및 디자인 기획/설계",
 		],
 	},
 
-	stacks: [
+	articles: {
+		title: "Experience",
+		description: ["개발 관련 경험들과 자격 내역, 수상 내역입니다."],
+	},
+
+	certifications: [
 		{
-			name: "Languages",
-			items: ["Python", "JavaScript", "TypeScript"],
+			title: "SQL 개발자 (SQLD)",
+			date: "2024.09.20",
+			desc: "한국데이터산업진흥원",
 		},
 		{
-			name: "Frontend",
-			items: [
+			title: "ADsP (Advanced Data Specialist)",
+			date: "2024.03.22",
+			desc: "한국데이터진흥원",
+		},
+	],
+
+	prize: [
+		{
+			title: "삼성 청년 SW-AI 아카데미 웹앱 경진대회 우수상",
+			company: "삼성전자",
+			date: "2025.05",
+			desc: "1학기 웹앱 경진대회에서 우수 프로젝트로 선정되었습니다. (반 2등)",
+		},
+		{
+			title: "삼성 청년 SW-AI 아카데미 웹디자인 경진대회 우수상",
+			company: "삼성전자",
+			date: "2025.08.18",
+			desc: "2학기 웹디자인 경진대회에서 우수 프로젝트로 선정되었습니다. (반 2등)",
+		},
+		{
+			title: "삼성 청년 SW-AI 아카데미 핀테크 경진대회 우수상",
+			company: "삼성전자",
+			date: "2025.09.29",
+			desc: "2학기 핀테크 경진대회에서 우수 프로젝트로 선정되었습니다. (반 2등)",
+		},
+	],
+
+	stacks: [
+		{
+			title: "Languages",
+			skill: ["Python", "JavaScript", "TypeScript", "HTML", "CSS"],
+		},
+
+		{
+			title: "Frontend",
+			skill: [
 				"React",
 				"React Native",
 				"Next.js",
@@ -39,13 +169,10 @@ const HomepageInfo = {
 				"CSS",
 			],
 		},
+
 		{
-			name: "Database",
-			items: ["MySQL"],
-		},
-		{
-			name: "Tools",
-			items: ["Git", "GitHub", "GitLab", "Jira", "Figma"],
+			title: "Tools",
+			skill: ["Git", "GitHub", "GitLab", "Jira", "Figma"],
 		},
 	],
 
@@ -53,7 +180,7 @@ const HomepageInfo = {
 		frontend: [
 			"4개의 팀 프로젝트 개발 경험",
 			"Swagger 기반 REST API 연동 개발 경험",
-			"Vue 3 Composition API 기반 UI 컴포넌트 설계 ",
+			"Vue 3 Composition API 기반 UI 컴포넌트 설계",
 			"React + Zustand 기반 공통 UI 컴포넌트와 디자인 시스템을 구축",
 			"Next.js 기반 공통 UI 컴포넌트와 디자인 시스템을 구축",
 			"React Native + React Webview 기반의 하이브리드 앱 개발 경험",
@@ -83,18 +210,6 @@ const HomepageInfo = {
 			description: [],
 		},
 	],
-
-	about: {
-		title: "I’m Tharindu N. I live in Sri Lanka, where I design the future.",
-		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind. Collaborating with others is a great way to learn and grow, and I'm always open to new ideas and feedback.",
-	},
-
-	articles: {
-		title: "I'm passionate about pushing the boundaries of what's possible and inspiring the next generation of innovators.",
-		description:
-			"Chronological collection of my long-form thoughts on programming, leadership, product design, and more.",
-	},
 };
 
-export default HomepageInfo;
+export default INFO;

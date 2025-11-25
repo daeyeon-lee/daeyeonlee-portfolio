@@ -2,38 +2,21 @@ import React from "react";
 
 function article_1() {
 	return {
-		date: "7 May 2023",
-		title: "The Benefits of Cloud Computing",
-		description:
-			"Cloud computing offers a range of benefits, including cost savings and increased flexibility. Find out why more businesses are turning to the cloud.",
-		keywords: [
-			"The Benefits of Cloud Computing",
-			"Tharindu",
-			"Tharindu N",
-			"Tharindu Nayanajith",
+		date: "2025.01. ~ 2025.12.",
+		title: "삼성 청년 SW 아카데미",
+		description: "삼성 청년 SW 아카데미 13기 활동",
+		infos: [
+			"삼성, 고용노동부 주관 SW 역량 향상 교육 프로그램",
+			"Python, 알고리즘, Vue.js, HTML/CSS/JavaScript/TypeScript, React, Django기반 웹 서비스 구축 및 DB 설계에 대해서 학습했습니다.",
+			"팀 프로젝트를 통한 협업 경험",
+			"1학기 프로젝트 우수상, 2학기 프로젝트 우수상 수상",
+			"우수 교육생 3회 선정",
 		],
-		style: `
-				.article-content {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-				}
+		style: ``,
 
-				.randImage {
-					align-self: center;
-					outline: 2px solid red;
-				}
-				`,
 		body: (
 			<React.Fragment>
-				<div className="article-content">
-					<div className="paragraph">Content of article 1</div>
-					<img
-						src="https://picsum.photos/200/300"
-						alt="random"
-						className="randImage"
-					/>
-				</div>
+				<h1>Content of sdfsdf 2</h1>
 			</React.Fragment>
 		),
 	};
@@ -41,20 +24,13 @@ function article_1() {
 
 function article_2() {
 	return {
-		date: "7 May 2023",
-		title: "Artificial Intelligence in Healthcare",
-		description:
-			"AI is transforming the healthcare industry, from improving patient outcomes to streamlining operations. Discover the latest applications of this game-changing technology.",
+		date: "2017.03. ~ 2024.02. (졸업)",
+		title: "가천대학교 응용통계학과, 경영학과",
 		style: ``,
-		keywords: [
-			"Artificial Intelligence in Healthcare",
-			"Tharindu",
-			"Tharindu N",
-			"Tharindu Nayanajith",
-		],
+		style: ``,
 		body: (
 			<React.Fragment>
-				<h1>Content of article 2</h1>
+				<h1>Content of sdfsdf 2</h1>
 			</React.Fragment>
 		),
 	};
