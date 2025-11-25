@@ -74,7 +74,7 @@
 
 @media (max-width: 900px) {
 	.nav-background {
-		max-width: 90%;
+		max-width: 100%;
 		min-width: 320px;
 	}
 
