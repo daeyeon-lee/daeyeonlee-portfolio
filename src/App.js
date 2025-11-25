@@ -28,8 +28,8 @@ function App() {
 				<Route path="/about" element={<About />} />
 				<Route path="/projects" element={<Projects />} />
 				<Route path="/articles" element={<Articles />} />
-				<Route path="/article/:slug" element={<ReadArticle />} />
-				<Route path="/project/:slug" element={<ReadProject />} />
+				<Route path="/article/:id" element={<ReadArticle />} />
+				<Route path="/project/:id" element={<ReadProject />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="*" element={<Notfound />} />
 			</Routes>
