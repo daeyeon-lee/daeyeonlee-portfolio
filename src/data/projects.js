@@ -7,7 +7,7 @@ function Project1() {
 	return {
 		period: "2025.10 ~ 2025.11 (7주)",
 		title: "제리뽀",
-		description: "반려동물 종합 관리 플랫폼",
+		description: "하이브리드 앱 기반 반려동물 종합 관리 플랫폼",
 		linkcolor: "#fbec96",
 		hovercolor: "#F2B518",
 		links: [
@@ -38,12 +38,10 @@ function Project1() {
 			],
 		},
 		develop_role: [
-			"데이터베이스 설계 참여",
-			"회원가입 및 로그인",
-			"여행 계획 조회",
-			"공지사항 게시판",
-			"사용자 검색",
-			"메인, 로그인/회원가입, 마이페이지, 검색, 게시판 페이지 구현",
+			"React Native + React Webview 기반의 하이브리드 앱 개발",
+			"단일 코드베이스 전략을 통해 개발 효율을 극대화하고, 웹과 앱 간의 WebView 통신 최적화",
+			"카메라/ 갤러리, 푸시 알림 등 네이티브 기기 기능을 활용하기 위해 네이티브 브릿지를 활용해 연동",
+			"Android/Web 환경에서 FCM SDK를 연동하고 알림 메시지 전송 로직 구현",
 		],
 		role: "프론트엔드 개발, 디자인",
 		team: "팀 프로젝트 (BE 3, FE 2, AU 1)",
@@ -191,7 +189,7 @@ function Project2() {
 	return {
 		period: "2025.09 (4주)",
 		title: "씨네모아",
-		description: "크라우드 펀딩 기반 영화관 대관 자동화 플랫폼",
+		description: "Next.js를 활용한 영화관 대관 자동화 플랫폼",
 		linkcolor: "#fdc3c4",
 		hovercolor: "#FF533B",
 		links: [
@@ -397,7 +395,7 @@ function Project3() {
 	return {
 		period: "2025.07 ~ 2025.08 (7주)",
 		title: "토닥",
-		description: "WEBRTC를 활용한 반려동물 비대면 진료 서비스",
+		description: "WebRTC를 활용한 반려동물 비대면 진료 서비스",
 		linkcolor: "#d6f0ff",
 		hovercolor: "#6cb5f9",
 		links: [
@@ -725,8 +723,7 @@ function Project4() {
 	return {
 		period: "2023.10 ~ 2023.11 (7주)",
 		title: "금쪼기",
-		description:
-			"소비습관 개선을 위한 챌린지를 통해 금융상품을 리워드로 제공하는 서비스",
+		description: "Vue.js를 활용한 금융 챌린지 어플리케이션",
 		linkcolor: "#e8fd8b",
 		hovercolor: "#cbf58c",
 		links: [

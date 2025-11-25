@@ -71,11 +71,12 @@ const ReadProject = () => {
 				<title>{`${project.title} | ${INFO.main.title}`}</title>
 				<meta name="description" content={project.description} />
 			</Helmet>
-
+			{/* 프로젝트 상세 */}
 			<div className="page-content">
 				<NavBar active="projects" />
-
+				{/* 콘텐츠 영역 */}
 				<div className="content-wrapper">
+					{/* 로고 */}
 					<div className="read-article-logo-container">
 						<div className="read-article-logo">
 							<Logo width={46} />
@@ -83,10 +84,12 @@ const ReadProject = () => {
 					</div>
 
 					<div className="read-article-container">
+						{/* 프로젝트 정보 */}
 						<div className="read-article-wrapper">
 							<div className="title read-article-title">
 								{project.title}
 							</div>
+							{/* 프로젝트 정보 */}
 							<div className="read-article-info-container">
 								{project.period && (
 									<div className="read-article-date">
@@ -104,6 +107,7 @@ const ReadProject = () => {
 									</div>
 								)}
 							</div>
+							{/* 프로젝트 내용 */}
 							<div className="read-article-body">
 								{project.thumbnail_image && (
 									<img
@@ -112,6 +116,7 @@ const ReadProject = () => {
 										className="project-image"
 									/>
 								)}
+								{/* 프로젝트 링크 */}
 								{project.links && project.links.length > 0 && (
 									<div className="links">
 										{project.links.map((data, index) => (
@@ -131,11 +136,13 @@ const ReadProject = () => {
 									</div>
 								)}
 
+								{/* 프로젝트 상세 내용 */}
 								{project.long_description && (
 									<div className="project-description">
 										{project.long_description}
 									</div>
 								)}
+								{/* 프로젝트 기술 스택 */}
 								{project.stacks &&
 									typeof project.stacks === "object" &&
 									!Array.isArray(project.stacks) && (
@@ -164,6 +171,7 @@ const ReadProject = () => {
 														</ul>
 													</div>
 												)}
+											{/* 백엔드 기술 스택 */}
 											{project.stacks.backend &&
 												project.stacks.backend.length >
 													0 && (
@@ -187,6 +195,7 @@ const ReadProject = () => {
 														</ul>
 													</div>
 												)}
+											{/* 인프라 기술 스택 */}
 											{project.stacks.infra &&
 												project.stacks.infra.length >
 													0 && (
@@ -212,6 +221,7 @@ const ReadProject = () => {
 												)}
 										</>
 									)}
+								{/* 기술 스택 배열 */}
 								{project.stacks &&
 									Array.isArray(project.stacks) &&
 									project.stacks.length > 0 && (
@@ -228,6 +238,7 @@ const ReadProject = () => {
 											</div>
 										</>
 									)}
+								{/* 아키텍처 다이어그램 */}
 								{project.architecture_image && (
 									<>
 										<h2>👨‍🔧 아키텍처 다이어그램</h2>
@@ -238,17 +249,23 @@ const ReadProject = () => {
 										/>
 									</>
 								)}
+								{/* 맡은 역할 */}
 								{project.develop_role &&
 									project.develop_role.length > 0 && (
 										<>
 											<h2>🙋‍♀️ 맡은 역할</h2>
-											{project.develop_role.map(
-												(data, index) => (
-													<li key={index}>{data}</li>
-												)
-											)}
+											<ul className="develop-role-list">
+												{project.develop_role.map(
+													(data, index) => (
+														<li key={index}>
+															{data}
+														</li>
+													)
+												)}
+											</ul>
 										</>
 									)}
+								{/* 개발 내용 */}
 								{project.develop_content && (
 									<>
 										<h2>💻 개발 내용</h2>
@@ -257,6 +274,7 @@ const ReadProject = () => {
 										</ArticleStyle>
 									</>
 								)}
+								{/* 회고 */}
 								{project.review && (
 									<>
 										<h2>✍️ 회고</h2>
