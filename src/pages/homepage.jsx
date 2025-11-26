@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 
 import { faMailBulk, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Helmet } from "react-helmet";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
+import Stack from "../components/stack/stack";
 // import Article from "../components/homepage/article";
 // import Works from "../components/homepage/works";
 // import AllProjects from "../components/projects/allProjects";
@@ -62,13 +63,10 @@ const Homepage = () => {
 
 	return (
 		<React.Fragment>
-			{/* SEO */}
-			{/* <Helmet>
-				<title>
-					{HomepageInfo.main.title} - {HomepageInfo.main.jobTitle}
-				</title>
-				<meta name="robots" content="noindex, nofollow" />
-			</Helmet> */}
+			<Helmet>
+				<title>{`Home | ${INFO.main.title}`}</title>
+			</Helmet>
+
 			{/* 로고 */}
 			<div className="page-content">
 				<NavBar active="home" />
@@ -82,15 +80,23 @@ const Homepage = () => {
 					<div className="homepage-container">
 						<div className="intro-area">
 							<div className="intro-content">
-								<div className="title intro-title">
-									{INFO.homepage.name}
-								</div>
-								<div className="title intro-job-title">
+								<div className="intro-title">
 									{INFO.homepage.title}
+								</div>
+								<div className="intro-job-title">
+									{INFO.homepage.name}
 								</div>
 
 								<div className="subtitle intro-subtitle">
-									{INFO.homepage.description}
+									{Array.isArray(INFO.homepage.description)
+										? INFO.homepage.description.map(
+												(desc, index) => (
+													<div key={index}>
+														{desc}
+													</div>
+												)
+										  )
+										: INFO.homepage.description}
 								</div>
 							</div>
 							{/* 자기 소개 이미지 */}
@@ -150,64 +156,15 @@ const Homepage = () => {
 						</div>
 						{/* 기술 스택 리스트 */}
 						<div className="stacks-section">
-							<div className="section-title">Stacks</div>
-							<div className="stacks-list">
-								{(INFO.stacks || []).map((category, index) => (
-									<div key={index} className="stack-item">
-										<div className="stack-category-title">
-											{category.title}
-										</div>
-										<ul className="stack-list">
-											{category.skill.map(
-												(stack, stackIndex) => (
-													<li key={stackIndex}>
-														{stack}
-													</li>
-												)
-											)}
-										</ul>
-									</div>
-								))}
-							</div>
+							<div className="title section-title">Stacks</div>
+							<Stack stacks={INFO.stacks} />
 						</div>
 
 						{/* 스킬 */}
 						<div className="skills-section">
-							<div className="section-title">Skills</div>
+							<div className="title section-title">Skills</div>
 							<div className="skills-content">
-								{INFO.skills?.backend && (
-									<div className="skill-category">
-										<div className="skill-category-title">
-											Backend Engineering
-										</div>
-										<ul className="skill-list">
-											{INFO.skills.backend.map(
-												(skill, index) => (
-													<li key={index}>
-														• {skill}
-													</li>
-												)
-											)}
-										</ul>
-									</div>
-								)}
-								{INFO.skills?.software && (
-									<div className="skill-category">
-										<div className="skill-category-title">
-											Software Development
-										</div>
-										<ul className="skill-list">
-											{INFO.skills.software.map(
-												(skill, index) => (
-													<li key={index}>
-														•{skill}
-													</li>
-												)
-											)}
-										</ul>
-									</div>
-								)}
-								{INFO.skills?.frontend && (
+								{INFO.skills.frontend && (
 									<div className="skill-category">
 										<div className="skill-category-title">
 											Frontend Engineering
@@ -215,9 +172,7 @@ const Homepage = () => {
 										<ul className="skill-list">
 											{INFO.skills.frontend.map(
 												(skill, index) => (
-													<li key={index}>
-														•{skill}
-													</li>
+													<li key={index}>{skill}</li>
 												)
 											)}
 										</ul>
@@ -228,7 +183,9 @@ const Homepage = () => {
 
 						{/* 경험 */}
 						<div className="activities-section">
-							<div className="section-title">Activities</div>
+							<div className="title section-title">
+								Activities
+							</div>
 							<div className="activities-content">
 								{(INFO.activities || []).map(
 									(activity, index) => (

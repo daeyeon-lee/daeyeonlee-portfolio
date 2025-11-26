@@ -50,112 +50,7 @@ function Project1() {
 		architecture_image: "../jellypaw_system_architecture.png",
 		long_description:
 			"OvTrip은 편리하게 여행 계획을 짤 수 있는 여행 계획 관리 플랫폼입니다. 늘어난 여행 수요를 반영하여 여행자들이 보다 편리하게  여행 계획을 세울 수 있도록 하는 것을 목표로 하였습니다.유저는 원하는 기간을 선택해 날짜별 여행 계획을 짤 수 있습니다. 장소 선택시 직선 경로가 지도에 표시됩니다. 마이페이지에서 저장한 여행 계획을 볼 수 있습니다.",
-		develop_content: (
-			<React.Fragment>
-				<h3>■ AS IS</h3>
-				<li>
-					Business
-					<ul>
-						<li>
-							사용자는 카카오, 네이버 소셜 로그인을 이용해
-							회원가입, 로그인을 할 수 있습니다.
-							<ul>
-								<li>소셜 플랫폼은 확장 가능해야 합니다.</li>
-							</ul>
-						</li>
-						<li>
-							로그인 한 사용자는 가입된 유저를 검색할 수 있습니다.
-						</li>
-						<li>
-							자신이 생성한 여행 계획 목록을 확인할 수 있습니다.
-						</li>
-						<li>
-							사용자는 로그인 여부와 관계 없이 공지사항을 볼 수
-							있습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Tech
-					<ul>
-						<li>REST API로 구현합니다.</li>
-						<li>로그인은 JWT를 사용하여 진행합니다.</li>
-						<li>데이터베이스는 Amazon RDS를 사용합니다.</li>
-					</ul>
-				</li>
-				<h3>■ Challenge</h3>
-				<li>Spring Boot를 이용해 REST API를 구현</li>
-				<li>
-					JWT를 사용하여 OAuth2.0 소셜 로그인/회원가입 구현, 인증
-					인터셉터 구현을 진행했습니다.
-				</li>
-				<li>
-					소셜 로그인 구현시 플랫폼에 간편한 API 요청을 위해 Spring
-					Cloud OpenFeign을 사용했습니다.
-					<ul>
-						<li>
-							코드를 간결하게 작성하기 위해 소셜 플랫폼에 API를
-							요청할 때 Spring Cloud의 Feign Client를
-							사용했습니다.
-						</li>
-						<li>
-							다른 소셜 플랫폼에 대한 확장을 열어 두기 위해 소셜
-							플랫폼의 종류에 따라 구현된 서비스를 결정하도록
-							했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Vue.js를 이용해 프론트엔드 구현, Axios를 이용해 API 요청
-					<ul>
-						<li>
-							빠른 개발 진행을 위해 러닝커브가 낮은 프레임워크인
-							Vue.js를 사용했습니다.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Argument Resolver를 구현하여 Access Token에서 회원정보를
-					가져올 때 컨트롤러에서 파라미터로 쉽게 받을 수 있게 해
-					편의성을 늘렸습니다. (기존코드 3줄 → 1줄)
-				</li>
-				<li>
-					Preflgiht에 Access token이 담겨있지 않아 API 호출 실패하던
-					에러 해결{" "}
-					<a href="https://xntifrxgile.tistory.com/70">
-						(해결 과정 정리글)
-					</a>
-					<ul>
-						<li>
-							Preflight는 HTTP OPTIONS으로 요청을 보내기 때문에,
-							HTTP OPTIONS에 대한 요청은 토큰 값 검증을 하지
-							않도록 변경했습니다.
-						</li>
-					</ul>
-				</li>
-				<h3>■ TO BE</h3>
-				<li>
-					삼성 청년 SW 아카데미 프로젝트 경진대회 우수상을 받았습니다.
-					(10팀 중 2등)
-				</li>
-				<h2>🏫 배운점</h2>
-				<li>
-					소셜 회원가입을 구현하며 OAuth2.0에 대해 이해할 수
-					있었습니다.
-				</li>
-				<li>Feign Client에 대해 학습할 수 있었습니다.</li>
-				<li>
-					인터셉터를 구현하며 API 요청 흐름을 이해할 수 있었습니다.
-				</li>
-				<li>
-					axios, vuex, router, 비동기에 대해 학습할 수 있었습니다.
-				</li>
-				<li>
-					Gitflow를 적용하여 기능마다 branch를 생성해 개발하며 Git에
-					대해 학습할 수 있었습니다.
-				</li>
-			</React.Fragment>
-		),
+		develop_content: <React.Fragment></React.Fragment>,
 		review: (
 			<React.Fragment>
 				<h3>첫 프론트엔드 개발</h3>
@@ -189,7 +84,7 @@ function Project2() {
 	return {
 		period: "2025.09 (4주)",
 		title: "씨네모아",
-		description: "Next.js를 활용한 영화관 대관 자동화 플랫폼",
+		description: "Next.js App Router를 활용한 웹사이트 개발",
 		linkcolor: "#fdc3c4",
 		hovercolor: "#FF533B",
 		links: [

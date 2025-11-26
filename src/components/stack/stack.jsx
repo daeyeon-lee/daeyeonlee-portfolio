@@ -16,13 +16,20 @@ const Stack = (props) => {
 						<div className="stack-title">
 							<span className="stack-name">{stack.title}</span>
 						</div>
-						<div className="stacklist">
+						<ul className="stack-list">
 							{stack.skill &&
 								Array.isArray(stack.skill) &&
-								stack.skill.map((item, skillIndex) => (
-									<li key={skillIndex}>{item}</li>
-								))}
-						</div>
+								stack.skill.map((item, skillIndex) => {
+									// 문자열 또는 객체 형태 모두 지원
+									const skillName =
+										typeof item === "string"
+											? item
+											: item.name || "";
+									return (
+										<li key={skillIndex}>{skillName}</li>
+									);
+								})}
+						</ul>
 					</div>
 				))}
 			</div>

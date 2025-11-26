@@ -18,7 +18,7 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	gap: 60px;
-	margin-bottom: 40px;
+	margin-bottom: 0px;
 }
 
 .intro-content {
@@ -29,14 +29,14 @@
 }
 
 .intro-title {
-	font-size: 2.5rem;
-	font-weight: 600;
+	font-size: 2rem;
+	font-weight: 800;
 	color: var(--primary-color);
 	margin-bottom: 10px;
 }
 
 .intro-job-title {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: 600;
 	color: var(--secondary-color);
 }
@@ -45,6 +45,9 @@
 	color: var(--secondary-color);
 	line-height: 1.6;
 	margin-bottom: 10px;
+	width: 100%;
+	max-width: 100%;
+	white-space: pre-line;
 }
 
 .intro-image-wrapper {
@@ -99,7 +102,7 @@
 }
 
 .stacks-section {
-	margin-bottom: 60px;
+	margin-bottom: 0px !important;
 }
 
 .stacks-list {
@@ -119,10 +122,6 @@
 	font-size: 1.1rem;
 	font-weight: 600;
 	color: var(--primary-color);
-	background-color: #fef3c7;
-	padding: 4px 8px;
-	border-radius: 4px;
-	display: inline-block;
 	margin-bottom: 20px;
 }
 
@@ -136,10 +135,79 @@
 	color: var(--secondary-color);
 	margin-bottom: 8px;
 	line-height: 1.5;
+	position: relative;
+	padding-left: 15px;
+}
+
+.stack-list li::before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: var(--secondary-color);
+}
+
+.stack-header {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	max-width: 100%;
+}
+
+.stack-name {
+	font-weight: 500;
+	color: var(--primary-color);
+	max-width: 140px;
+	width: 100%;
+	flex-shrink: 0;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
+
+.stack-description {
+	font-size: 0.85rem;
+	color: var(--tertiary-color);
+	line-height: 1.4;
+	padding-left: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	flex: 1;
+	min-width: 0;
+	max-width: 60%;
+}
+
+.stack-description-item {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	max-width: 100%;
+}
+
+.score-blocks {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+
+.score-block {
+	width: 16px;
+	height: 16px;
+	border-radius: 2px;
+	transition: background-color 0.2s ease;
+}
+
+.score-block.filled {
+	background-color: var(--primary-color);
+}
+
+.score-block.empty {
+	background-color: #e5e7eb;
+	border: 1px solid #d1d5db;
 }
 
 .skills-section {
-	margin-bottom: 60px;
+	padding-bottom: 30px !important;
 }
 
 .skills-content {
@@ -153,8 +221,9 @@
 }
 
 .skill-category-title {
-	font-size: 1.1rem;
-	font-weight: 600;
+	font-family: var(--secondary-font);
+	font-size: 20px;
+	font-weight: 520;
 	color: var(--primary-color);
 	margin-bottom: 15px;
 }
@@ -162,6 +231,7 @@
 .skill-list {
 	list-style: none;
 	padding: 0;
+	padding-left: 0;
 	margin: 0;
 }
 
@@ -169,10 +239,19 @@
 	color: var(--secondary-color);
 	margin-bottom: 10px;
 	line-height: 1.6;
+	position: relative;
+	padding-left: 15px;
+}
+
+.skill-list li::before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: var(--secondary-color);
 }
 
 .activities-section {
-	margin-bottom: 60px;
+	padding-bottom: 30px !important;
 }
 
 .activities-content {
@@ -247,6 +326,7 @@
 
 	.intro-content {
 		width: 100%;
+		order: 2;
 	}
 
 	.intro-title {
@@ -256,6 +336,7 @@
 	.intro-image-wrapper {
 		width: 100%;
 		justify-content: center;
+		order: 1;
 	}
 
 	.intro-image-container {
@@ -266,6 +347,23 @@
 	.stack-item {
 		grid-template-columns: 1fr;
 		gap: 15px;
+	}
+
+	.stack-item-with-score {
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.stack-header {
+		max-width: 100%;
+	}
+
+	.stack-description {
+		max-width: 100%;
+	}
+
+	.stack-header {
+		width: 100%;
 	}
 
 	.activity-item {

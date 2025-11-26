@@ -3,7 +3,7 @@
 	flex-wrap: wrap;
 	align-items: stretch;
 	padding-top: 30px;
-	padding-bottom: 10px;
+	padding-bottom: 30px;
 }
 
 .stack-container {
@@ -24,7 +24,7 @@
 		width: 100%;
 	}
 
-	.stacklist {
+	.stack-list {
 		margin-top: 10px;
 		width: 100%;
 	}
@@ -38,14 +38,15 @@
 }
 
 .stack-name {
-	box-shadow: inset 0 -10px 0 #fffebd;
+	color: var(--primary-color);
+	font-family: var(--secondary-font);
+	font-size: 20px;
+	font-weight: 700;
+	width: 70%;
 }
-.stacklist {
+.stack-list {
 	flex-basis: 80%;
-}
-
-.stacklist li {
-	font-size: 16px !important;
-	line-height: 28px;
-	color: #65656d;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
