@@ -262,7 +262,7 @@ const Homepage = () => {
 																			descIndex
 																		}
 																	>
-																		•{desc}
+																		{desc}
 																	</li>
 																)
 															)}

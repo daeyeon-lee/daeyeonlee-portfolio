@@ -18,11 +18,11 @@ const Article = (props) => {
 					<div className="article-title">{title}</div>
 					<div className="article-description">{description}</div>
 					{infos && (
-						<div className="article-infos">
+						<ul className="article-infos">
 							{infos.map((info, index) => (
-								<li>{info}</li>
+								<li key={index}>{info}</li>
 							))}
-						</div>
+						</ul>
 					)}
 				</div>
 			</div>

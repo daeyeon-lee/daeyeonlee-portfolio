@@ -58,6 +58,24 @@
 .article-infos {
 	font-size: 14px;
 	color: var(--secondary-color);
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	margin-top: 10px;
+}
+
+.article-infos li {
+	margin-bottom: 5px;
+	line-height: 1.6;
+	position: relative;
+	padding-left: 15px;
+}
+
+.article-infos li::before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: var(--secondary-color);
 }
 
 @media (max-width: 1024px) {

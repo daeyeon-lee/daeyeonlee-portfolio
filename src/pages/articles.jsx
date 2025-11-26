@@ -18,9 +18,9 @@ const Articles = () => {
 
 	return (
 		<React.Fragment>
-			<Helmet>
+			{/* <Helmet>
 				<title>{`Expriences | ${INFO.main.title}`}</title>
-			</Helmet>
+			</Helmet> */}
 
 			<div className="page-content">
 				<NavBar active="expriences" />
