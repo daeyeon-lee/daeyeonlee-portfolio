@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 
+import { faMailBulk, faLink } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
-import Socials from "../components/about/socials";
 
 import INFO from "../data/user";
 
@@ -49,10 +52,47 @@ const Contact = () => {
 						</div>
 					</div>
 
-					<div className="socials-container">
-						<div className="contact-socials">
-							<Socials />
-						</div>
+					{/* 소셜 링크 */}
+					<div className="social-links">
+						{/* GitHub */}
+						{INFO.socials.github && (
+							<a
+								href={INFO.socials.github}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FontAwesomeIcon
+									icon={faGithub}
+									className="social-icon"
+								/>
+							</a>
+						)}
+						{/* Blog */}
+						{INFO.socials.blog && (
+							<a
+								href={INFO.socials.blog}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FontAwesomeIcon
+									icon={faLink}
+									className="social-icon"
+								/>
+							</a>
+						)}
+						{/* Email */}
+						{INFO.main.email && (
+							<a
+								href={`mailto:${INFO.main.email}`}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FontAwesomeIcon
+									icon={faMailBulk}
+									className="social-icon"
+								/>
+							</a>
+						)}
 					</div>
 
 					<div className="page-footer">
