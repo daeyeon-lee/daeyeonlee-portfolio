@@ -283,6 +283,15 @@ const ReadProject = () => {
 										</ArticleStyle>
 									</>
 								)}
+								{/* 성과 */}
+								{project.performance && (
+									<>
+										<h2>🏆 성과</h2>
+										<ArticleStyle>
+											{project.performance}
+										</ArticleStyle>
+									</>
+								)}
 							</div>
 						</div>
 					</div>
