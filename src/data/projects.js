@@ -8,8 +8,8 @@ function Project1() {
 		period: "2025.10 ~ 2025.11 (7주)",
 		title: "제리뽀",
 		description: "하이브리드 앱 기반 반려동물 종합 관리 플랫폼",
-		linkcolor: "#fbec96",
-		hovercolor: "#F2B518",
+		linkcolor: "#6ABFB8",
+		hovercolor: "#4D8983",
 		links: [
 			{
 				info: "Github URL",
@@ -40,8 +40,9 @@ function Project1() {
 		develop_role: [
 			"React Native + React Webview 기반의 하이브리드 앱 개발",
 			"단일 코드베이스 전략을 통해 개발 효율을 극대화하고, 웹과 앱 간의 WebView 통신 최적화",
-			"카메라/ 갤러리, 푸시 알림 등 네이티브 기기 기능을 활용하기 위해 네이티브 브릿지를 활용해 연동",
-			"Android/Web 환경에서 FCM SDK를 연동하고 알림 메시지 전송 로직 구현",
+			"카메라 / 갤러리, 푸시 알림 등 네이티브 기기 기능을 활용하기 위해 네이티브 브릿지를 활용해 연동",
+			"Google Place API를 활용한 장소 검색 기능 구현",
+			"Android 환경에서 FCM SDK를 연동하고 알림 메시지 전송 로직 구현",
 		],
 		role: "프론트엔드 개발, 디자인",
 		team: "팀 프로젝트 (BE 3, FE 2, AU 1)",
@@ -49,31 +50,40 @@ function Project1() {
 		thumbnail_image: "../jellypaw_thumbnail.png",
 		architecture_image: "../jellypaw_system_architecture.png",
 		long_description:
-			"OvTrip은 편리하게 여행 계획을 짤 수 있는 여행 계획 관리 플랫폼입니다. 늘어난 여행 수요를 반영하여 여행자들이 보다 편리하게  여행 계획을 세울 수 있도록 하는 것을 목표로 하였습니다.유저는 원하는 기간을 선택해 날짜별 여행 계획을 짤 수 있습니다. 장소 선택시 직선 경로가 지도에 표시됩니다. 마이페이지에서 저장한 여행 계획을 볼 수 있습니다.",
-		develop_content: <React.Fragment></React.Fragment>,
+			"제리뽀는 일기 형식으로 반려동물의 일상을 기록하고 공유할 수 있습니다. 반려동물 동반 가능 시설을 검색하고 예약할 수 있습니다. 또한  AI 기반 반려동물 건강 검사 및 검사 기록 관리 기능을 제공합니다.",
+		develop_content: (
+			<React.Fragment>
+				<h3>React Native + React WebView 하이브리드 앱 개발</h3>
+				<p>
+					React Native와 React WebView를 결합한 하이브리드 앱을
+					개발했습니다. 단일 코드베이스 전략을 통해 웹과 앱을 동시에
+					개발하여 개발 효율을 극대화했습니다. WebView를 통해 React로
+					개발한 웹 애플리케이션을 네이티브 앱에 통합하고, Redis를
+					통해 웹과 앱 간의 양방향 통신을 구현하여 데이터를 주고받을
+					수 있도록 최적화했습니다.
+				</p>
+				<h3>FCM을 활용한 푸시 알림 구현</h3>
+				<p>
+					Android와 Web 환경에서 Firebase Cloud Messaging(FCM) SDK를
+					연동하여 푸시 알림 기능을 구현했습니다. FCM 토큰 관리 및
+					알림 메시지 수신 로직을 개발하고, 백그라운드와 포그라운드
+					상태에서의 알림 처리 방식을 구현하여 사용자에게 실시간
+					알림을 제공할 수 있도록 했습니다.
+				</p>
+			</React.Fragment>
+		),
 		review: (
 			<React.Fragment>
-				<h3>첫 프론트엔드 개발</h3>
+				<h3>React Native WebView 통신 최적화</h3>
 				<p>
-					프론트엔드 개발을 처음으로 경험하며 많은 것을 느꼈습니다.
-					프론트엔드가 어떤식으로 API를 요청하고 받아서 데이터를
-					출력하는지 등에 관한 것을 알게되었습니다. 어떤 식으로
-					데이터를 전해줘야 편한지와 같이 프론트엔드에 대해서 더욱
-					깊게 이해할 수 있었습니다.
-				</p>
-				<h3>소셜 로그인의 이해</h3>
-				<p>
-					OAuth2.0를 이해하고 구현할 수 있었습니다. 이번에 구현할 때,
-					Refresh Token과 Refresh Token의 만료 시간을 엔티티에
-					저장해서 사용했는데 이 경우 Refresh Token이 만료가
-					됐는지 만료 시간을 계속해서 검증하는 과정이
-					필요했습니다. Redis를 사용하는 경우, TTL을 이용하여 Refresh
-					Token이 만료되면 Redis에서 삭제되도록 구현할 수
-					있습니다.이러한 방식으로 구현하는 경우엔 Redis에 해당하는
-					데이터가 존재하는지 유무만 검사하면 되기
-					때문에 훨씬 편리하게 구현할 수 있다고 생각합니다. 다음엔
-					Refresh Token을 Redis에 저장하는 방식으로 구현해보고
-					싶습니다.
+					React Native와 WebView를 결합한 하이브리드 앱을 개발하면서,
+					WebView 내부의 React 컴포넌트에서 발생한 데이터나 이벤트를
+					React Native에서 실시간으로 받아와야 하는 상황이
+					발생했습니다. 직접적인 통신 방식으로는 한계가 있어, React
+					컴포넌트의 내용을 React Native에서 효율적으로 이용하기
+					위해서는 Redis를 활용해야 한다는 것을 깨달았습니다. 이를
+					통해 웹과 네이티브 간의 비동기 통신을 구현하고 데이터 동기화
+					문제를 해결할 수 있었습니다.
 				</p>
 			</React.Fragment>
 		),
@@ -693,6 +703,14 @@ function Project4() {
 					</ul>
 				</li>
 				<li>
+					<h3>첫 프론트엔드 개발</h3>
+					<p>
+						프론트엔드 개발을 처음으로 경험하며 많은 것을
+						느꼈습니다. 프론트엔드가 어떤식으로 API를 요청하고
+						받아서 데이터를 출력하는지 등에 관한 것을
+						알게되었습니다. 어떤 식으로 데이터를 전해줘야 편한지와
+						같이 프론트엔드에 대해서 더욱 깊게 이해할 수 있었습니다.
+					</p>
 					<b>Tech</b>
 					<ul>
 						<li>REST API로 구현합니다.</li>

@@ -38,6 +38,7 @@ const Project = (props) => {
 					</span>
 				))}
 			</div>
+
 			<div className="project-description">{description}</div>
 		</div>
 	);
