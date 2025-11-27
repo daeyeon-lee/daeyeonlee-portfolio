@@ -140,6 +140,7 @@
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	word-break: break-word;
+	max-width: max-content;
 }
 
 .stack-description {
@@ -155,13 +156,12 @@
 
 .stack-description-item {
 	width: 100%;
-	white-space: nowrap;
-
-	text-overflow: ellipsis;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
 }
 
 .score-blocks {
-	display: flex;
 	gap: 4px;
 	align-items: center;
 	flex-shrink: 0;

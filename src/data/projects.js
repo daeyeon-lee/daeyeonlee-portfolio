@@ -38,11 +38,10 @@ function Project1() {
 			],
 		},
 		develop_role: [
-			"React Native + React Webview 기반의 하이브리드 앱 개발",
-			"단일 코드베이스 전략을 통해 개발 효율을 극대화하고, 웹과 앱 간의 WebView 통신 최적화",
-			"카메라 / 갤러리, 푸시 알림 등 네이티브 기기 기능을 활용하기 위해 네이티브 브릿지를 활용해 연동",
-			"Google Place API를 활용한 장소 검색 기능 구현",
-			"Android 환경에서 FCM SDK를 연동하고 알림 메시지 전송 로직 구현",
+			"React Webview 전체 화면 퍼블리싱 및 최적화",
+			"카메라 / 갤러리, 푸시 알림 등 네이티브 기기 기능을 활용하기 위해 Redis를 활용해 연동",
+			"Google Place API를 활용한 장소 검색 및 지도 표시 기능 구현",
+			"Android 환경에서 FCM SDK를 연동하고 알림 메시지 수신 로직 구현",
 		],
 		role: "프론트엔드 개발, 디자인",
 		team: "팀 프로젝트 (BE 3, FE 2, AI 1)",
@@ -50,21 +49,24 @@ function Project1() {
 		thumbnail_image: "../jellypaw_thumbnail.png",
 		architecture_image: "../jellypaw_system_architecture.png",
 		long_description:
-			"제리뽀는 일기 형식으로 반려동물의 일상을 기록하고 공유할 수 있습니다. 반려동물 동반 가능 시설을 검색하고 예약할 수 있습니다. 또한  AI 기반 반려동물 건강 검사 및 검사 기록 관리 기능을 제공합니다.",
+			"제리뽀는 일기 형식으로 반려동물의 일상을 기록하고 공유할 수 있습니다. 반려동물 동반 가능 시설을 검색하고 예약할 수 있습니다. AI 소변 검사 결과 기반 반려동물 건강 분석 및 기록 관리 기능을 제공합니다.",
 		develop_content: (
 			<React.Fragment>
-				<h3>React Native + React WebView 하이브리드 앱 개발</h3>
+				<h3>React Webview와 React Native 간 양방향 통신 구현</h3>
 				<ul>
 					<li>
 						단일 코드베이스 전략을 통해 웹과 앱을 동시에 개발하여
-						개발 효율을 극대화
+						UI/UX 일관성 유지
 					</li>
 					<li>
-						WebView를 통해 React로 개발한 웹 애플리케이션을 네이티브
-						앱에 통합하고, Redis를 통해 웹과 앱 간의 양방향 통신을
-						구현하여 데이터를 주고받을 수 있도록 최적화
+						WebView 내부의 React로 구현한 피드 조회 화면에서 React
+						Native로 구현된 게시글 작성 화면으로 이동할 때, Redis를
+						활용하여 웹과 앱 간의 양방향 통신을 구현하여 게시글 수정
+						기능을 연동
 					</li>
 				</ul>
+				<br />
+				<img src="../jellypaw_Feededit.png" alt="FCM" width={600} />
 
 				<h3>알림 서비스를 위해 Firebase Cloud Messaging 사용</h3>
 				<ul>
@@ -77,21 +79,29 @@ function Project1() {
 						사용자에게 실시간 알림을 제공
 					</li>
 				</ul>
+				<img src="../jellypaw_FCM.png" alt="FCM" width={600} />
 			</React.Fragment>
 		),
 		review: (
 			<React.Fragment>
-				<h3>React Native WebView 통신 최적화</h3>
-				<p>
-					React Native와 WebView를 결합한 하이브리드 앱을 개발하면서,
-					WebView 내부의 React 컴포넌트에서 발생한 데이터나 이벤트를
-					React Native에서 실시간으로 받아와야 하는 상황이
-					발생했습니다. 직접적인 통신 방식으로는 한계가 있어, React
-					컴포넌트의 내용을 React Native에서 효율적으로 이용하기
-					위해서는 Redis를 활용해야 한다는 것을 깨달았습니다. 이를
-					통해 웹과 네이티브 간의 비동기 통신을 구현하고 데이터 동기화
-					문제를 해결할 수 있었습니다.
-				</p>
+				<h3>무한 스크롤 도입으로 피드 조회 속도 개선</h3>
+				<ul>
+					<li>
+						<b>이슈 :</b> 피드가 실시간으로 늘어나는 상황에서 전체
+						데이터 일괄 로드로 게시글 조회시 페이지 초기 속도 저하
+						문제 발생
+					</li>
+					<li>
+						<b>해결 :</b> 무한 스크롤 도입으로 초기 렌더링 속도
+						개선, api 호출 시 마지막 데이터의 id를 저장하고 다음
+						페이지 요청 시 이전 마지막 데이터의 id 이후의 데이터를
+						요청하여 데이터 중복 로드 방지
+					</li>
+					<li>
+						<b>결과 :</b> 초기 로딩 성능 개선 및 데이터 중복 로드
+						방지로 사용자 경험 개선
+					</li>
+				</ul>
 			</React.Fragment>
 		),
 		performance: null,
@@ -140,7 +150,7 @@ function Project2() {
 		thumbnail_image: "../cienmoa-thumbnail.png",
 		architecture_image: "../cinemoa_system_architecture.png",
 		long_description:
-			"씨네모아는 영화관 대관 신청부터 관객 모집, 결제, 정산까지 모든 과정을 하나의 플랫폼에서 처리할 수 있는 서비스입니다. 대관 수요자들이 안전하고 편리하게 원하는 영화를 함께 모여 볼 수 있는 환경을 제공합니다.",
+			"씨네모아는 영화관 대관 신청부터 관객 모집, 결제, 정산까지 모든 과정을 하나의 플랫폼에서 해결할 수 있는 서비스입니다. 대관 수요자들이 안전하고 편리하게 원하는 영화를 함께 모여 볼 수 있는 환경을 제공합니다.",
 		develop_content: (
 			<React.Fragment>
 				<h3>
@@ -170,20 +180,32 @@ function Project2() {
 					</li>
 				</ul>
 
-				<h3>
-					React + Zustand 기반 공통 UI 컴포넌트와 디자인 시스템 구축
-				</h3>
+				<h3>반응형 디자인을 고려한 마크업 UI 개발</h3>
 				<ul>
 					<li>
-						React + Zustand 기반 공통 UI 컴포넌트와 디자인 시스템을
-						구축
+						다양한 화면 크기에 대응하여 사용자 경험을 최적화하기
+						위해 반응형 디자인을 적용
 					</li>
 					<li>
-						사용자 역할 상태에 따른 UI 흐름 설계 및 조건부 메뉴
-						렌더링
+						데스크톱에서는 네비게이션 메뉴바와 인기 상영회 리스트를
+						1줄로 배치하여 넓은 화면을 효율적으로 활용
 					</li>
-					<li>REST API 연동 개발</li>
+					<li>
+						태블릿 및 모바일에서는 네비게이션 메뉴바와 인기 상영회
+						리스트를 2줄로 변경하여 가독성과 접근성 향상
+					</li>
+					<li>
+						상영회 카드는 데스크톱에서는 세로 레이아웃으로, 모바일
+						환경에서는 가로 레이아웃으로 자동 전환되어 각 디바이스에
+						최적화된 UI 제공
+					</li>
 				</ul>
+				<br />
+				<img
+					src="../cinemoa_responsive.gif"
+					alt="반응형 디자인 설명"
+					width={600}
+				/>
 			</React.Fragment>
 		),
 		review: (
@@ -206,8 +228,8 @@ function Project3() {
 		period: "2025.07 ~ 2025.08 (7주)",
 		title: "토닥",
 		description: "WebRTC를 활용한 반려동물 비대면 진료 서비스",
-		linkcolor: "#d6f0ff",
-		hovercolor: "#6cb5f9",
+		linkcolor: "#E9F1D7",
+		hovercolor: "#6E9E29",
 		links: [
 			{
 				info: "Github URL",
@@ -252,7 +274,7 @@ function Project3() {
 		thumbnail_image: "../todak-thumbnail.png",
 		architecture_image: "../todak_system_architecture.png",
 		long_description:
-			"병원 방문이 어려운 바쁜 반려인들을 위한 반려동물 비대면 의료 서비스입니다.",
+			"토닥은 병원 방문이 어려운 바쁜 반려인들을 위해 언제 어디서나 반려동물의 건강을 관리할 수 있는 서비스를 제공합니다. WebRTC를 활용하여 실시간으로 수의사와 화상 상담을 진행할 수 있으며, STT로 음성을 인식하여 상담 내용을 자동으로 요약하여 기록으로 보관할 수 있습니다. ",
 		develop_content: (
 			<React.Fragment>
 				<h3>공통 UI 컴포넌트와 디자인 시스템 구축</h3>
@@ -287,10 +309,32 @@ function Project3() {
 						렌더링하여 역할에 맞는 메뉴만 표시
 					</li>
 				</ul>
+				<br />
+				<img src="../todak_zustand.png" alt="FCM" width={600} />
 			</React.Fragment>
 		),
 		review: (
 			<React.Fragment>
+				<h3>debounce 기법을 통한 API 호출 감소</h3>
+				<ul>
+					<li>
+						<b>이슈 :</b> 약 5만 개 이상의 병원 데이터를 보유한
+						상황에서, 사용자가 "서울대병원"을 검색할 경우 5글자 입력
+						시 총 5번의 API 호출이 발생하여 서버 부하 증가 및
+						불필요한 네트워크 트래픽 발생
+					</li>
+					<li>
+						<b>해결 :</b> debounce 기법을 적용하여 검색어 입력 후
+						1초 동안 추가 입력이 없을 때만 API를 호출하도록 구현.
+						사용자가 타이핑을 멈춘 시점에만 최종 검색어로 API
+						요청하여 불필요한 호출 방지
+					</li>
+					<li>
+						<b>결과 :</b> 5글자 입력 시 API 호출 횟수가 5회에서
+						1회로 80% 감소, 평균 응답 속도 2배 향상
+					</li>
+				</ul>
+
 				<h3>프로젝트 관리와 커뮤니케이션, 코드 리뷰</h3>
 				<p>
 					팀장을 맡아 Jira의 사용법을 익히며 프로젝트 관리 방법을
@@ -348,7 +392,7 @@ function Project4() {
 		thumbnail_image: "../guemjjoki-thumbnail.png",
 		architecture_image: "../guemjjoki_system_architecture.png",
 		long_description:
-			"금쪼기는 챌린지, 가계부, 금융상품을 하나의 플랫폼으로 합쳐 소비습관 개선을 위한 챌린지를 통해 금융상품을 리워드로 제공하는 서비스",
+			"금쪼기는 챌린지, 가계부, 금융상품을 하나의 플랫폼으로 합쳐 소비습관 개선을 위한 챌린지를 통해 금융상품을 리워드로 제공하는 서비스입니다.",
 		develop_content: (
 			<React.Fragment>
 				<h3>Swagger 기반 REST API 연동 개발</h3>

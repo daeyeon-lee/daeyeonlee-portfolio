@@ -86,17 +86,11 @@ const INFO = {
 					],
 				},
 				{
-					name: "JavaScript",
-					score: 3,
-					description: [
-						"ES6+ 문법을 활용한 비동기 처리 및 DOM 조작이 가능합니다",
-					],
-				},
-				{
-					name: "TypeScript",
+					name: "JavaScript, TypeScript",
 					score: 4,
 					description: [
-						"React, Vue.js 프레임워크에서 TypeScript 기반 개발 경험이 있습니다",
+						"ES6+ 문법을 활용한 비동기 처리 및 DOM 조작이 가능합니다",
+						"JavaScript로 인해 발생할 수 있는 예기치 못한 에러를 방지하기 위해 TypeScript를 활용하여 타입을 명시적으로 지정하고 코드 안정성을 향상시킬 수 있습니다.",
 					],
 				},
 			],
