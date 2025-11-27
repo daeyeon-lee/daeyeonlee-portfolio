@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { faMailBulk, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
@@ -18,9 +18,9 @@ const Articles = () => {
 
 	return (
 		<React.Fragment>
-			{/* <Helmet>
+			<Helmet>
 				<title>{`Expriences | ${INFO.main.title}`}</title>
-			</Helmet> */}
+			</Helmet>
 
 			<div className="page-content">
 				<NavBar active="expriences" />
@@ -78,7 +78,7 @@ const Articles = () => {
 							</div>
 						</div>
 						<div className="articles-container">
-							<h2>Prize</h2>
+							<h2>Awards</h2>
 							<div className="articles-wrapper">
 								{(INFO.prize || []).map((cert, index) => (
 									<div

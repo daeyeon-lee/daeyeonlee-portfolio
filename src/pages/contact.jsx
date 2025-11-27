@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 import { faMailBulk, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,7 +40,7 @@ const Contact = () => {
 							관심 갖고 포트폴리오를 읽어주셔서 감사합니다. 저에게
 							연락을 하고 싶으시면 부담없이{" "}
 							<a
-								class="myemail"
+								className="myemail"
 								href={`mailto:${INFO.main.email}`}
 							>
 								{INFO.main.email}

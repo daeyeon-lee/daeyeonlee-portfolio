@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import ReactGA from "react-ga4";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -24,8 +25,9 @@ function App() {
 	}, []);
 
 	return (
-		<div className="App">
-			<Routes>
+		<HelmetProvider>
+			<div className="App">
+				<Routes>
 				<Route path="/" element={<Homepage />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/projects" element={<Projects />} />
@@ -47,7 +49,8 @@ function App() {
 				pauseOnHover
 				theme="light"
 			/>
-		</div>
+			</div>
+		</HelmetProvider>
 	);
 }
 

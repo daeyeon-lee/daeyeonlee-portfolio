@@ -9,7 +9,7 @@
 
 .homepage-container {
 	padding-top: 25px;
-	max-width: 1200px;
+	max-width: 1400px;
 	margin: 0 auto;
 }
 
@@ -17,7 +17,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	gap: 60px;
+	gap: 40px;
 	margin-bottom: 0px;
 }
 
@@ -26,6 +26,9 @@
 	flex-direction: column;
 	align-items: flex-start;
 	flex: 1;
+	min-width: 0;
+	width: 100%;
+	max-width: calc(100% - 240px);
 }
 
 .intro-title {
@@ -33,12 +36,16 @@
 	font-weight: 800;
 	color: var(--primary-color);
 	margin-bottom: 10px;
+	white-space: nowrap;
+	width: 100%;
 }
 
 .intro-job-title {
 	font-size: 1.2rem;
 	font-weight: 600;
 	color: var(--secondary-color);
+	white-space: nowrap;
+	width: 100%;
 }
 
 .intro-subtitle {
@@ -56,8 +63,8 @@
 }
 
 .intro-image-container {
-	width: 300px;
-	height: 300px;
+	width: 200px;
+	height: 200px;
 	flex-shrink: 0;
 }
 
@@ -81,7 +88,7 @@
 	gap: 20px;
 	padding: 10px 0;
 	border-bottom: 1px solid #e5e5e5;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 .social-icon {

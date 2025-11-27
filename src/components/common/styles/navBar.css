@@ -48,8 +48,7 @@
 }
 
 .nav-bullet {
-	color: var(--secondary-color);
-	font-size: 1rem;
+	display: none;
 }
 
 .nav-item.active a {
