@@ -102,6 +102,7 @@ const INFO = {
 					description: [
 						"React + Zustand 기반 공통 UI 컴포넌트와 디자인 시스템을 구축했습니다",
 						"REST API 연동 개발 및 React Router를 활용한 라우팅 구현이 가능합니다",
+						"React로 atomic 아키텍처에서 프론트엔드 개발",
 					],
 				},
 				{
