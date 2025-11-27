@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import "./styles/project.css";
 
 const Project = (props) => {
-	const { logo, title, description, link, stack } = props;
+	const { logo, title, description, link, stack, stackTags } = props;
 
-	// stacks 배열의 각 항목에서 ":" 뒤의 값만 추출하고, 쉼표로 분리하여 개별 태그로 변환
-	const tags = stack
+	// stackTags가 있으면 우선 사용, 없으면 기존 방식으로 파싱
+	const tags = stackTags
+		? stackTags
+		: stack
 		? stack.flatMap((item) => {
 				// ":" 뒤의 부분만 추출
 				const afterColon = item.includes(":")

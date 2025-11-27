@@ -9,7 +9,7 @@ const AllProjects = () => {
 		<div className="all-projects-container">
 			{myProjects.map((ProjectInfo, index) => {
 				const project = ProjectInfo();
-				// stacks가 객체인 경우 frontend만 추출
+				// stackTags가 있으면 우선 사용, 없으면 기존 방식으로 처리
 				let stackArray = project.stacks;
 				if (
 					project.stacks &&
@@ -26,6 +26,7 @@ const AllProjects = () => {
 							title={project.title}
 							description={project.description}
 							stack={stackArray}
+							stackTags={project.stackTags}
 							link={`/project/${index + 1}`}
 						/>
 					</div>

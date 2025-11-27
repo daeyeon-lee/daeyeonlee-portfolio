@@ -58,6 +58,8 @@
 	flex-wrap: wrap;
 	gap: 8px;
 	margin-bottom: 16px;
+	min-height: 60px;
+	align-items: flex-start;
 }
 
 .project-tag {

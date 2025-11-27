@@ -1,13 +1,10 @@
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import React from "react";
 
 function Project1() {
 	return {
 		period: "2025.10 ~ 2025.11 (7주)",
 		title: "제리뽀",
-		description: "하이브리드 앱 기반 반려동물 종합 관리 플랫폼",
+		description: "반려동물 종합 관리 어플리케이션",
 		linkcolor: "#6ABFB8",
 		hovercolor: "#4D8983",
 		links: [
@@ -16,6 +13,7 @@ function Project1() {
 				url: "https://github.com/dlsqja/jellypaw",
 			},
 		],
+		stackTags: ["React", "React Native", "TypeScript", "Tailwind CSS"],
 		stacks: {
 			frontend: [
 				"Framework: React, React Native",
@@ -112,8 +110,7 @@ function Project2() {
 	return {
 		period: "2025.09 (4주)",
 		title: "씨네모아",
-		description:
-			"Next.js를 활용한 크라우드 펀딩 기반 영화관 대관 자동화 서비스",
+		description: "크라우드 펀딩 기반 영화관 대관 서비스",
 		linkcolor: "#fdc3c4",
 		hovercolor: "#FF533B",
 		links: [
@@ -122,6 +119,7 @@ function Project2() {
 				url: "https://github.com/daeyeon-lee/Cinemoa",
 			},
 		],
+		stackTags: ["Next.js", "TypeScript", "Tailwind CSS"],
 		stacks: {
 			frontend: [
 				"Framework: Next.js",
@@ -150,7 +148,7 @@ function Project2() {
 		thumbnail_image: "../cienmoa-thumbnail.png",
 		architecture_image: "../cinemoa_system_architecture.png",
 		long_description:
-			"씨네모아는 영화관 대관 신청부터 관객 모집, 결제, 정산까지 모든 과정을 하나의 플랫폼에서 해결할 수 있는 서비스입니다. 대관 수요자들이 안전하고 편리하게 원하는 영화를 함께 모여 볼 수 있는 환경을 제공합니다.",
+			"씨네모아는 영화관 대관 신청부터 관객 모집, 결제, 정산까지 모든 과정을 하나의 플랫폼에서 해결할 수 있는 서비스입니다. 대관 수요자들이 안전하고 편리하게 원하는 영화를 함께 모여 볼 수 있는 환경을 제공합니다",
 		develop_content: (
 			<React.Fragment>
 				<h3>
@@ -229,7 +227,7 @@ function Project3() {
 	return {
 		period: "2025.07 ~ 2025.08 (7주)",
 		title: "토닥",
-		description: "WebRTC를 활용한 반려동물 비대면 진료 서비스",
+		description: "실시간 비대면 반려동물 진료 서비스",
 		linkcolor: "#E9F1D7",
 		hovercolor: "#6E9E29",
 		links: [
@@ -238,6 +236,7 @@ function Project3() {
 				url: "https://github.com/daeyeon-lee/todak",
 			},
 		],
+		stackTags: ["React", "TypeScript", "Tailwind CSS"],
 		stacks: {
 			frontend: [
 				"Framework: React",
@@ -381,7 +380,7 @@ function Project4() {
 	return {
 		period: "2023.10 ~ 2023.11 (7주)",
 		title: "금쪼기",
-		description: "Vue.js를 활용한 금융 챌린지 어플리케이션",
+		description: "금융 챌린지 어플리케이션",
 		linkcolor: "#e8fd8b",
 		hovercolor: "#cbf58c",
 		links: [
@@ -390,6 +389,7 @@ function Project4() {
 				url: "https://github.com/daeyeon-lee/geumjjoki",
 			},
 		],
+		stackTags: ["Vue.js", "TypeScript", "Pinia"],
 		stacks: {
 			frontend: [
 				"Language: TypeScript",
