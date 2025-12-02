@@ -22,7 +22,19 @@ const Socials = () => {
 							className="social-icon"
 						/>
 					</div>
-					<div className="social-text">GitHub</div>
+					<div className="social-text">{INFO.socials.github}</div>
+				</a>
+			</div>
+
+			<div className="social">
+				<a href={INFO.socials.blog} target="_blank" rel="noreferrer">
+					<div className="social-icon">
+						<FontAwesomeIcon
+							icon={faMicroblog}
+							className="social-icon"
+						/>
+					</div>
+					<div className="social-text">{INFO.socials.blog}</div>
 				</a>
 			</div>
 

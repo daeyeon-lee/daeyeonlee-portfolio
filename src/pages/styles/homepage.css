@@ -13,11 +13,17 @@
 	margin: 0 auto;
 }
 
+.homepage-container .social-links {
+	align-items: flex-start !important;
+	justify-content: flex-start !important;
+}
+
 .intro-area {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: flex-start;
 	align-items: flex-start;
-	gap: 40px;
+	gap: 30px;
 	margin-bottom: 0px;
 }
 
@@ -28,7 +34,6 @@
 	flex: 1;
 	min-width: 0;
 	width: 100%;
-	max-width: calc(100% - 240px);
 }
 
 .intro-title {
@@ -83,21 +88,66 @@
 
 .social-links {
 	display: flex;
-	justify-content: left;
-	align-items: center;
-	gap: 20px;
+	flex-direction: column;
+	align-items: flex-start !important;
+	justify-content: flex-start;
+	gap: 15px;
 	padding: 10px 0;
 	border-bottom: 1px solid #e5e5e5;
 	margin-bottom: 20px;
+	margin-left: 0 !important;
+	margin-right: auto !important;
+	width: 100%;
+	text-align: left !important;
+}
+
+.social-link-item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start !important;
+	width: 100%;
+	text-align: left !important;
+	margin-left: 0 !important;
+}
+
+.social-link-item a {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start !important;
+	text-decoration: none;
+	gap: 12px;
+	width: auto;
+	margin-left: 0 !important;
 }
 
 .social-icon {
-	font-size: 36px;
-	transition: color 0.2s ease-in-out;
+	font-size: 18px;
+	transition: color 0.2s ease-in-out, fill 0.2s ease-in-out;
 	color: var(--secondary-color);
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .social-icon:hover {
+	color: var(--primary-color);
+}
+
+.social-icon svg {
+	fill: currentColor;
+}
+
+.social-icon path {
+	fill: currentColor;
+}
+
+.social-link-text {
+	color: var(--secondary-color);
+	font-size: 15px;
+	font-weight: 500;
+	transition: color 0.2s ease-in-out;
+}
+
+.social-link-item a:hover .social-link-text {
 	color: var(--primary-color);
 }
 
@@ -140,7 +190,7 @@
 
 .stack-list li {
 	color: var(--secondary-color);
-	margin-bottom: 8px;
+	margin-bottom: 4px;
 	line-height: 1.5;
 	position: relative;
 	padding-left: 15px;
@@ -333,7 +383,6 @@
 
 	.intro-content {
 		width: 100%;
-		order: 2;
 	}
 
 	.intro-title {
@@ -343,7 +392,6 @@
 	.intro-image-wrapper {
 		width: 100%;
 		justify-content: center;
-		order: 1;
 	}
 
 	.intro-image-container {

@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
-import { faMailBulk, faLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
+import SocialLinks from "../components/common/socialLinks";
 
 import INFO from "../data/user";
 
@@ -37,15 +34,7 @@ const Contact = () => {
 						<div className="title contact-title">Contact</div>
 
 						<div className="subtitle contact-subtitle">
-							관심 갖고 포트폴리오를 읽어주셔서 감사합니다. 저에게
-							연락을 하고 싶으시면 부담없이{" "}
-							<a
-								className="myemail"
-								href={`mailto:${INFO.main.email}`}
-							>
-								{INFO.main.email}
-							</a>{" "}
-							로 메일 부탁드립니다!
+							관심 갖고 포트폴리오를 읽어주셔서 감사합니다.
 							<br />
 							끊임 없이 성장하는 개발자가 되도록 노력하겠습니다.
 							감사합니다!
@@ -53,47 +42,7 @@ const Contact = () => {
 					</div>
 
 					{/* 소셜 링크 */}
-					<div className="social-links">
-						{/* GitHub */}
-						{INFO.socials.github && (
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="social-icon"
-								/>
-							</a>
-						)}
-						{/* Blog */}
-						{INFO.socials.blog && (
-							<a
-								href={INFO.socials.blog}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faLink}
-									className="social-icon"
-								/>
-							</a>
-						)}
-						{/* Email */}
-						{INFO.main.email && (
-							<a
-								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faMailBulk}
-									className="social-icon"
-								/>
-							</a>
-						)}
-					</div>
+					<SocialLinks />
 
 					<div className="page-footer">
 						<Footer />

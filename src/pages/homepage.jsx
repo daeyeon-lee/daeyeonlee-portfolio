@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-import { faMailBulk, faLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Helmet } from "react-helmet-async";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
 import Stack from "../components/stack/stack";
-// import Article from "../components/homepage/article";
-// import Works from "../components/homepage/works";
-// import AllProjects from "../components/projects/allProjects";
-
+import SocialLinks from "../components/common/socialLinks";
 import INFO from "../data/user";
-// import myArticles from "../data/articles";
-
 import "./styles/homepage.css";
 
 const Homepage = () => {
@@ -79,6 +71,18 @@ const Homepage = () => {
 					{/* 자기 소개 영역 */}
 					<div className="homepage-container">
 						<div className="intro-area">
+							{/* 자기 소개 이미지 */}
+							<div className="intro-image-wrapper">
+								<div className="intro-image-container">
+									<div className="intro-image">
+										<img
+											src="homepage.jpg"
+											alt="about"
+											className="intro-img"
+										/>
+									</div>
+								</div>
+							</div>
 							<div className="intro-content">
 								<div className="intro-title">
 									{INFO.homepage.title}
@@ -99,61 +103,9 @@ const Homepage = () => {
 										: INFO.homepage.description}
 								</div>
 							</div>
-							{/* 자기 소개 이미지 */}
-							<div className="intro-image-wrapper">
-								<div className="intro-image-container">
-									<div className="intro-image">
-										<img
-											src="homepage.jpg"
-											alt="about"
-											className="intro-img"
-										/>
-									</div>
-								</div>
-							</div>
 						</div>
 						{/* 소셜 링크 */}
-						<div className="social-links">
-							{/* GitHub */}
-							{INFO.socials.github && (
-								<a
-									href={INFO.socials.github}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon
-										icon={faGithub}
-										className="social-icon"
-									/>
-								</a>
-							)}
-							{/* Blog */}
-							{INFO.socials.blog && (
-								<a
-									href={INFO.socials.blog}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon
-										icon={faLink}
-										className="social-icon"
-									/>
-								</a>
-							)}
-							{/* Email */}
-							{INFO.main.email && (
-								<a
-									href={`mailto:${INFO.main.email}`}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon
-										icon={faMailBulk}
-										className="social-icon"
-									/>
-								</a>
-							)}
-						</div>
+						<SocialLinks />
 						{/* 기술 스택 리스트 */}
 						<div className="stacks-section">
 							<div className="title section-title">Stacks</div>

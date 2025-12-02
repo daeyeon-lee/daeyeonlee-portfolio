@@ -32,11 +32,11 @@
 	padding: 10px 0;
 	border-bottom: 1px solid #e5e5e5;
 	margin-bottom: 40px;
-	margin-top: 40px;
+	margin-top: 25px;
 }
 
 .social-icon {
-	font-size: 36px;
+	font-size: 24px;
 	transition: color 0.2s ease-in-out;
 	color: var(--secondary-color);
 }

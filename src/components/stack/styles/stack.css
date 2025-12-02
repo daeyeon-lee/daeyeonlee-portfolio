@@ -2,8 +2,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .stack-container {
@@ -11,7 +11,7 @@
 	box-sizing: border-box;
 	overflow: hidden;
 	display: flex;
-	padding-bottom: 24px;
+	padding-bottom: 12px;
 }
 
 @media (max-width: 600px) {
