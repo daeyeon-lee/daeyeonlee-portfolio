@@ -76,7 +76,7 @@ const Homepage = () => {
 								<div className="intro-image-container">
 									<div className="intro-image">
 										<img
-											src="homepage.jpg"
+											src="profile.jpg"
 											alt="about"
 											className="intro-img"
 										/>
