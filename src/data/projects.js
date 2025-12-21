@@ -378,7 +378,7 @@ function Project3() {
 
 function Project4() {
 	return {
-		period: "2023.10 ~ 2023.11 (7주)",
+		period: "2025.05 ~ 2025.06 (7주)",
 		title: "금쪼기",
 		description: "금융 챌린지 어플리케이션",
 		linkcolor: "#e8fd8b",
